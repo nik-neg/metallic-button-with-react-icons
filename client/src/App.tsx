@@ -7,23 +7,32 @@ import {
 } from './components/lists/constants.tsx';
 
 function App() {
-    const [selectedButtons, setSelectedButtons] = useState<IconLibraries>(
-        IconLibraries.AntDesignIcons
-    );
+    const [searchTerm, setSearchTerm] = useState('');
 
-    console.log({ selectedButtons });
+    console.log({ searchTerm });
+
+    const handleSetSearchTerm = (value: string) => {
+        setSearchTerm(value);
+    };
+
+    const [selectedButtonsList, setSelectedButtonsList] =
+        useState<IconLibraries>(IconLibraries.AntDesignIcons);
+
+    console.log({ selectedButtons: selectedButtonsList });
     const handleSetSelectedButtons = (value: IconLibraries) => {
-        setSelectedButtons(value);
+        setSelectedButtonsList(value);
     };
     return (
         <SAppContainer>
             <SAppContainerColumn>
                 <SideDrawer
                     handleSetSelectedButtons={handleSetSelectedButtons}
+                    handleSetSearchTerm={handleSetSearchTerm}
+                    searchTerm={searchTerm}
                 />
             </SAppContainerColumn>
             <SAppContainerColumn>
-                {iconLibraryMap[selectedButtons]}
+                {iconLibraryMap[selectedButtonsList]}
             </SAppContainerColumn>
         </SAppContainer>
     );

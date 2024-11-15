@@ -27,6 +27,7 @@ import ButtonIconListSi from './ButtonIconListSi.tsx';
 import ButtonIconListTb from './ButtonIconListTb.tsx';
 import ButtonIconListVsc from './ButtonIconListVsc.tsx';
 import ButtonIconListWi from './ButtonIconListWi.tsx';
+import { ComponentType } from 'react';
 
 // Enum for Icon Libraries
 export enum IconLibraries {
@@ -63,71 +64,34 @@ export enum IconLibraries {
     WeatherIcons = 'WeatherIcons',
 }
 
-// Enum for Icon Abbreviations
-export enum IconAbbreviations {
-    AntDesignIcons = 'ai',
-    BootstrapIcons = 'bi',
-    BoxIcons = 'bx',
-    CircumIcons = 'ci',
-    CssGg = 'gg',
-    Devicons = 'devicons',
-    Feather = 'feather',
-    FlatColorIcons = 'fc',
-    FontAwesome5 = 'fa5',
-    FontAwesome6 = 'fa6',
-    GameIcons = 'gi',
-    GithubOcticons = 'go',
-    GrommetIcons = 'gi',
-    Heroicons = 'hi',
-    Heroicons2 = 'hi2',
-    IcoMoonFree = 'imf',
-    Icons8LineAwesome = 'ia',
-    Ionicons4 = 'i4',
-    Ionicons5 = 'i5',
-    Lucide = 'lucide',
-    MaterialDesignIcons = 'mdi',
-    PhosphorIcons = 'ph',
-    RadixIcons = 'ri',
-    RemixIcon = 'ri',
-    SimpleIcons = 'si',
-    SimpleLineIcons = 'sli',
-    TablerIcons = 'ti',
-    ThemifyIcons = 'ti',
-    Typicons = 'ty',
-    VSCodeIcons = 'vsc',
-    WeatherIcons = 'wi',
-}
-
-// Map of Icon Libraries to corresponding React components
-// Map of Icon Libraries to corresponding React components
-export const iconLibraryMap: { [key in IconLibraries]: React.ComponentType } = {
-    [IconLibraries.AntDesignIcons]: <ButtonIconListAi />, // JSX element for AntDesignIcons
-    [IconLibraries.BootstrapIcons]: <ButtonIconListBs />, // JSX element for BootstrapIcons
-    [IconLibraries.BoxIcons]: <ButtonIconListBi />, // JSX element for BoxIcons
-    [IconLibraries.CircumIcons]: <ButtonIconListCi />, // JSX element for CircumIcons
-    [IconLibraries.CssGg]: <ButtonIconListCg />, // JSX element for CssGg
-    [IconLibraries.Devicons]: <ButtonIconListDi />, // JSX element for Devicons
-    [IconLibraries.Feather]: <ButtonIconListFi />, // JSX element for Feather
-    [IconLibraries.FlatColorIcons]: <ButtonIconListFc />, // JSX element for FlatColorIcons
-    [IconLibraries.FontAwesome5]: <ButtonIconListFa />, // JSX element for FontAwesome5
-    [IconLibraries.FontAwesome6]: <ButtonIconListFa6 />, // JSX element for FontAwesome6
-    [IconLibraries.GameIcons]: <ButtonIconListGi />, // JSX element for GameIcons
-    [IconLibraries.GithubOcticons]: <ButtonIconListGo />, // JSX element for GithubOcticons
-    [IconLibraries.GrommetIcons]: <ButtonIconListGr />, // JSX element for GrommetIcons
-    [IconLibraries.Heroicons]: <ButtonIconListHi />, // JSX element for Heroicons
-    [IconLibraries.Heroicons2]: <ButtonIconListHi2 />, // JSX element for Heroicons2
-    [IconLibraries.IcoMoonFree]: <ButtonIconListIm />, // JSX element for IcoMoonFree
-    [IconLibraries.Icons8LineAwesome]: <ButtonIconListLia />, // JSX element for Icons8LineAwesome
-    [IconLibraries.Ionicons4]: <ButtonIconListIo />, // JSX element for Ionicons4
-    [IconLibraries.Ionicons5]: <ButtonIconListIo5 />, // JSX element for Ionicons5
-    [IconLibraries.Lucide]: <ButtonIconListLu />, // JSX element for Lucide
-    [IconLibraries.MaterialDesignIcons]: <ButtonIconListMd />, // JSX element for MaterialDesignIcons
-    [IconLibraries.PhosphorIcons]: <ButtonIconListPi />, // JSX element for PhosphorIcons
-    [IconLibraries.RadixIcons]: <ButtonIconListRx />, // JSX element for RadixIcons
-    [IconLibraries.RemixIcon]: <ButtonIconListRi />, // JSX element for RemixIcon
-    [IconLibraries.SimpleIcons]: <ButtonIconListSi />, // JSX element for SimpleIcons
-    [IconLibraries.SimpleLineIcons]: <ButtonIconListSl />, // JSX element for SimpleLineIcons
-    [IconLibraries.TablerIcons]: <ButtonIconListTb />, // JSX element for TablerIcons
-    [IconLibraries.VSCodeIcons]: <ButtonIconListVsc />, // JSX element for VSCodeIcons
-    [IconLibraries.WeatherIcons]: <ButtonIconListWi />, // JSX element for WeatherIcons
+export const iconLibraryMap: { [key in IconLibraries]: ComponentType } = {
+    [IconLibraries.AntDesignIcons.toString()]: <ButtonIconListAi />,
+    [IconLibraries.BootstrapIcons.toString()]: <ButtonIconListBs />,
+    [IconLibraries.BoxIcons.toString()]: <ButtonIconListBi />,
+    [IconLibraries.CircumIcons.toString()]: <ButtonIconListCi />,
+    [IconLibraries.CssGg.toString()]: <ButtonIconListCg />,
+    [IconLibraries.Devicons.toString()]: <ButtonIconListDi />,
+    [IconLibraries.Feather.toString()]: <ButtonIconListFi />,
+    [IconLibraries.FlatColorIcons.toString()]: <ButtonIconListFc />,
+    [IconLibraries.FontAwesome5.toString()]: <ButtonIconListFa />,
+    [IconLibraries.FontAwesome6.toString()]: <ButtonIconListFa6 />,
+    [IconLibraries.GameIcons.toString()]: <ButtonIconListGi />,
+    [IconLibraries.GithubOcticons.toString()]: <ButtonIconListGo />,
+    [IconLibraries.GrommetIcons.toString()]: <ButtonIconListGr />,
+    [IconLibraries.Heroicons.toString()]: <ButtonIconListHi />,
+    [IconLibraries.Heroicons2.toString()]: <ButtonIconListHi2 />,
+    [IconLibraries.IcoMoonFree.toString()]: <ButtonIconListIm />,
+    [IconLibraries.Icons8LineAwesome.toString()]: <ButtonIconListLia />,
+    [IconLibraries.Ionicons4.toString()]: <ButtonIconListIo />,
+    [IconLibraries.Ionicons5.toString()]: <ButtonIconListIo5 />,
+    [IconLibraries.Lucide.toString()]: <ButtonIconListLu />,
+    [IconLibraries.MaterialDesignIcons.toString()]: <ButtonIconListMd />,
+    [IconLibraries.PhosphorIcons.toString()]: <ButtonIconListPi />,
+    [IconLibraries.RadixIcons.toString()]: <ButtonIconListRx />,
+    [IconLibraries.RemixIcon.toString()]: <ButtonIconListRi />,
+    [IconLibraries.SimpleIcons.toString()]: <ButtonIconListSi />,
+    [IconLibraries.SimpleLineIcons.toString()]: <ButtonIconListSl />,
+    [IconLibraries.TablerIcons.toString()]: <ButtonIconListTb />,
+    [IconLibraries.VSCodeIcons.toString()]: <ButtonIconListVsc />,
+    [IconLibraries.WeatherIcons.toString()]: <ButtonIconListWi />,
 };

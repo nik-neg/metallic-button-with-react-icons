@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import {
     Box,
     Drawer,
@@ -6,14 +6,32 @@ import {
     ListItem,
     ListItemButton,
     ListItemText,
+    TextField,
 } from '@mui/material';
 import { IconLibraries } from '../lists/constants.tsx';
 
 interface SideDrawerProps {
     handleSetSelectedButtons: (value: IconLibraries) => void;
+    handleSetSearchTerm: (value: string) => void;
+    searchTerm: string;
 }
 
-export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
+export const SideDrawer = ({
+    handleSetSelectedButtons,
+    handleSetSearchTerm,
+    searchTerm,
+}: SideDrawerProps) => {
+    const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
+        const value = event.target.value;
+        handleSetSearchTerm(value);
+
+        // const filtered = Object.keys(iconLibraryMap)
+        //     .filter((key) => key.toLowerCase().includes(value.toLowerCase()))
+        //     .map((key) => iconLibraryMap[key as keyof typeof iconLibraryMap]);
+        //
+        // setFilteredLibraries(filtered);
+    };
+
     const [open, setOpen] = useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
@@ -30,6 +48,14 @@ export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
             role="presentation"
             onClick={toggleDrawer(false)}
         >
+            <TextField
+                label="Search Icon Libraries"
+                variant="outlined"
+                value={searchTerm}
+                onChange={handleSearch}
+                fullWidth
+                sx={{ marginBottom: 2 }}
+            />
             <List>
                 {Object.values(IconLibraries).map((text, index) => (
                     <ListItem key={text} disablePadding>
