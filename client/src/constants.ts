@@ -31,3 +31,5 @@ export const ICON_LIBRARIES: string[] = [
     'VS Code Icons',
     'Weather Icons',
 ];
+
+export const BACKGROUND_COLOR = 'black';

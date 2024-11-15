@@ -2,7 +2,7 @@ import re
 
 # Paths to files
 INDEX_FILE = "index.d.ts"  # Update this path to your `index.d.ts` file
-OUTPUT_FILE = "App.tsx"    # Update this path to your desired `App.tsx` output file
+BUTTON_LIST_OUTPUT_FILE = "ButtonIconList.tsx"  # Output file for the button list component
 
 def extract_icons(file_path):
     """
@@ -16,9 +16,9 @@ def extract_icons(file_path):
     return re.findall(pattern, content)
 
 
-def generate_app_tsx(icons):
+def generate_button_icon_list_tsx(icons):
     """
-    Generates the content of the App.tsx file.
+    Generates the content of ButtonIconList.tsx.
     """
     # Group icons by their prefixes (e.g., Ai, Ci, etc.)
     grouped_icons = {}
@@ -35,34 +35,30 @@ def generate_app_tsx(icons):
         for icon in icons_list:
             jsx_elements.append(
                 f"""        <SButtonContainer>
-          <SButton>
-            <{icon} size={{25}} aria-label={{"{icon}"}} />
-          </SButton>
-          <SButtonLabel>{icon}</SButtonLabel>
+            <SButton>
+                <{icon} size={{25}} aria-label={{"{icon}"}} />
+            </SButton>
+            <SButtonLabel>{icon}</SButtonLabel>
         </SButtonContainer>"""
             )
 
-    # Combine everything into the App.tsx structure
-    app_tsx = (
-        f'import {{ SAppContainerColumn, SButtonListContainer, SButtonContainer, SButton, SButtonLabel }} from "./App.styles.ts";\n'
+    # Combine everything into the ButtonIconList component structure
+    button_icon_list_tsx = (
+        f'import {{ SButtonListContainer, SButtonContainer, SButton, SButtonLabel }} from "./App.styles.ts";\n'
         + "\n".join(imports)
-        + "\n\nfunction App() {\n"
-        + "  return (\n"
-        + "    <SAppContainerColumn>\n"
-        + "      <SButtonListContainer>\n"
+        + "\n\nconst ButtonIconList = () => (\n"
+        + "  <SButtonListContainer>\n"
         + "\n".join(jsx_elements)
-        + "\n      </SButtonListContainer>\n"
-        + "    </SAppContainerColumn>\n"
-        + "  );\n"
-        + "}\n\nexport default App;\n"
+        + "\n  </SButtonListContainer>\n"
+        + ");\n\nexport default ButtonIconList;\n"
     )
 
-    return app_tsx
+    return button_icon_list_tsx
 
 
 def main():
     """
-    Main function to process the `index.d.ts` file and create App.tsx.
+    Main function to process the `index.d.ts` file and create ButtonIconList.tsx.
     """
     try:
         # Extract icons from the `index.d.ts` file
@@ -71,14 +67,14 @@ def main():
         # Limit to 100 icons for the output
         icons = icons[:100]
 
-        # Generate App.tsx content
-        app_content = generate_app_tsx(icons)
+        # Generate ButtonIconList.tsx content
+        button_icon_list_content = generate_button_icon_list_tsx(icons)
 
-        # Write to the App.tsx file
-        with open(OUTPUT_FILE, "w") as file:
-            file.write(app_content)
+        # Write to the ButtonIconList.tsx file
+        with open(BUTTON_LIST_OUTPUT_FILE, "w") as file:
+            file.write(button_icon_list_content)
 
-        print(f"App.tsx has been successfully generated with {len(icons)} icons.")
+        print(f"ButtonIconList.tsx has been successfully generated with {len(icons)} icons.")
     except Exception as e:
         print(f"An error occurred: {e}")
 
