@@ -1,13 +1,18 @@
 import { SAppContainer, SAppContainerColumn } from './App.styles.ts';
 import { SideDrawer } from './components/SideDrawer/SideDrawer.tsx';
-import ButtonIconListAi from './components/lists/ButtonIconListAi.tsx';
 import { useState } from 'react';
+import {
+    IconLibraries,
+    iconLibraryMap,
+} from './components/lists/constants.tsx';
 
 function App() {
-    const [selectedButtons, setSelectedButtons] = useState<string>('');
+    const [selectedButtons, setSelectedButtons] = useState<IconLibraries>(
+        IconLibraries.AntDesignIcons
+    );
 
     console.log({ selectedButtons });
-    const handleSetSelectedButtons = (value: string) => {
+    const handleSetSelectedButtons = (value: IconLibraries) => {
         setSelectedButtons(value);
     };
     return (
@@ -18,7 +23,7 @@ function App() {
                 />
             </SAppContainerColumn>
             <SAppContainerColumn>
-                <ButtonIconListAi />
+                {iconLibraryMap[selectedButtons]}
             </SAppContainerColumn>
         </SAppContainer>
     );

@@ -86,8 +86,8 @@ export enum IconAbbreviations {
 
 // Map of Icon Libraries to corresponding React components
 export const iconLibraryMap: { [key in IconLibraries]: React.ComponentType } = {
-    [IconLibraries.AntDesignIcons]: ButtonIconListAi,
-    [IconLibraries.BootstrapIcons]: ButtonIconListBs,
+    [IconLibraries.AntDesignIcons]: <ButtonIconListAi />,
+    [IconLibraries.BootstrapIcons]: <ButtonIconListBs />,
     [IconLibraries.BoxIcons]: ButtonIconListBi,
     [IconLibraries.CircumIcons]: ButtonIconListCi,
     [IconLibraries.CssGg]: ButtonIconListCg,

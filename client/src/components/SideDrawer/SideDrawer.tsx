@@ -10,7 +10,7 @@ import {
 import { IconLibraries } from '../lists/constants.tsx';
 
 interface SideDrawerProps {
-    handleSetSelectedButtons: (value: string) => void;
+    handleSetSelectedButtons: (value: IconLibraries) => void;
 }
 
 export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
@@ -20,8 +20,8 @@ export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
         setOpen(newOpen);
     };
 
-    const handleChoice = (event: any) => {
-        handleSetSelectedButtons(event.target.value);
+    const handleChoice = (text: string) => {
+        handleSetSelectedButtons(text as IconLibraries);
     };
 
     const DrawerList = (
@@ -33,7 +33,7 @@ export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
             <List>
                 {Object.values(IconLibraries).map((text, index) => (
                     <ListItem key={text} disablePadding>
-                        <ListItemButton onClick={handleChoice}>
+                        <ListItemButton onClick={() => handleChoice(text)}>
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>
