@@ -25,6 +25,12 @@ export const SButtonListContainer = styled.div`
     padding: 3rem;
 `;
 
+export const SButtonContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+`;
+
 // make other buttons on hover zoom out
 // click on button copies component
 interface SButtonProps {
@@ -62,4 +68,9 @@ export const SButton = styled.button<SButtonProps>`
         border: 3px solid ${BACKGROUND_COLOR}; /* Keep the same border color on click */
         transform: none; /* No scaling or transformation on click */
     }
+`;
+
+export const SButtonLabel = styled.div`
+    text-align: center;
+    color: white;
 `;

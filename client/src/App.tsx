@@ -1,6 +1,5 @@
 import {
     Box,
-    Divider,
     Drawer,
     List,
     ListItem,
@@ -11,6 +10,8 @@ import {
     SAppContainer,
     SAppContainerColumn,
     SButton,
+    SButtonContainer,
+    SButtonLabel,
     SButtonListContainer,
 } from './App.styles.ts';
 import {
@@ -140,16 +141,6 @@ function App() {
                     </ListItem>
                 ))}
             </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
         </Box>
     );
     return (
@@ -161,9 +152,13 @@ function App() {
             </SAppContainerColumn>
             <SAppContainerColumn>
                 <SButtonListContainer>
-                    <SButton>
-                        <VscAccount size={25} aria-label={'Account'} />
-                    </SButton>
+                    <SButtonContainer>
+                        <SButton>
+                            <VscAccount size={25} aria-label={'Account'} />
+                        </SButton>
+                        <SButtonLabel>VscAccount</SButtonLabel>
+                    </SButtonContainer>
+
                     <SButton>
                         <VscActivateBreakpoints size={25} />
                     </SButton>

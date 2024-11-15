@@ -1,5 +1,4 @@
 export const ICON_LIBRARIES: string[] = [
-    'Home',
     'Ant Design Icons',
     'Bootstrap Icons',
     'BoxIcons',
