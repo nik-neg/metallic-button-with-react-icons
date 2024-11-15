@@ -26,8 +26,11 @@ export const SButtonListContainer = styled.div`
 `;
 
 export const SButtonContainer = styled.div`
+    width: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 0.25rem;
 `;
 
@@ -71,6 +74,7 @@ export const SButton = styled.button<SButtonProps>`
 `;
 
 export const SButtonLabel = styled.div`
+    font-size: 14px;
     text-align: center;
     color: white;
 `;

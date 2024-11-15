@@ -23,28 +23,36 @@ def generate_app_tsx(icons):
     # Group icons by their prefixes (e.g., Ai, Ci, etc.)
     grouped_icons = {}
     for icon in icons:
-        prefix = re.match(r"([A-Za-z]+)", icon).group(1)
+        # Extract the prefix by taking the lowercase version of the letters before the first capital letter in the name
+        prefix = re.match(r"([A-Z][a-z]+)", icon).group(1).lower()
         grouped_icons.setdefault(prefix, []).append(icon)
 
     # Create import statements
     imports = []
     jsx_elements = []
     for prefix, icons_list in grouped_icons.items():
-        imports.append(f'import {{ {", ".join(icons_list)} }} from "react-icons/vsc";')
+        imports.append(f'import {{ {", ".join(icons_list)} }} from "react-icons/{prefix}";')
         for icon in icons_list:
-            jsx_elements.append(f'        <SButton>\n          <{icon} size={{25}} />\n        </SButton>')
+            jsx_elements.append(
+                f"""        <SButtonContainer>
+          <SButton>
+            <{icon} size={{25}} aria-label={{"{icon}"}} />
+          </SButton>
+          <SButtonLabel>{icon}</SButtonLabel>
+        </SButtonContainer>"""
+            )
 
     # Combine everything into the App.tsx structure
     app_tsx = (
-        f'import {{ SAppContainer, SButton, SButtonListContainer }} from "./App.styles.ts";\n'
+        f'import {{ SAppContainerColumn, SButtonListContainer, SButtonContainer, SButton, SButtonLabel }} from "./App.styles.ts";\n'
         + "\n".join(imports)
         + "\n\nfunction App() {\n"
         + "  return (\n"
-        + "    <SAppContainer>\n"
+        + "    <SAppContainerColumn>\n"
         + "      <SButtonListContainer>\n"
         + "\n".join(jsx_elements)
         + "\n      </SButtonListContainer>\n"
-        + "    </SAppContainer>\n"
+        + "    </SAppContainerColumn>\n"
         + "  );\n"
         + "}\n\nexport default App;\n"
     )
@@ -60,7 +68,7 @@ def main():
         # Extract icons from the `index.d.ts` file
         icons = extract_icons(INDEX_FILE)
 
-#         # Limit to 100 icons for the output
+        # Limit to 100 icons for the output
         icons = icons[:100]
 
         # Generate App.tsx content
