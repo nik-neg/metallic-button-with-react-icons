@@ -44,7 +44,7 @@ def generate_button_icon_list_tsx(icons):
 
     # Combine everything into the ButtonIconList component structure
     button_icon_list_tsx = (
-        f'import {{ SButtonListContainer, SButtonContainer, SButton, SButtonLabel }} from "./App.styles.ts";\n'
+        f'import {{ SButtonListContainer, SButtonContainer, SButton, SButtonLabel }} from "./ButtonIconList.styles";\n'
         + "\n".join(imports)
         + "\n\nconst ButtonIconList = () => (\n"
         + "  <SButtonListContainer>\n"
