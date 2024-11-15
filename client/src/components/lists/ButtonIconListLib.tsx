@@ -1,10 +1,12 @@
-import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
-
+import {
+    SButton,
+    SButtonContainer,
+    SButtonLabel,
+    SButtonListContainer,
+} from '../ButtonIconList';
 
 export const ButtonIconListLib = () => (
-  <SButtonListContainer>
-
-  </SButtonListContainer>
+    <SButtonListContainer></SButtonListContainer>
 );
 
 export default ButtonIconListLib;
