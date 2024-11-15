@@ -13,6 +13,20 @@ import ButtonIconListDi from './ButtonIconListDi.tsx';
 import ButtonIconListFi from './ButtonIconListFi.tsx';
 import ButtonIconListFa from './ButtonIconListFa.tsx';
 import ButtonIconListGr from './ButtonIconListGr.tsx';
+import ButtonIconListIm from './ButtonIconListIm.tsx';
+import ButtonIconListLia from './ButtonIconListLia.tsx';
+import ButtonIconListIo from './ButtonIconListIo.tsx';
+import ButtonIconListIo5 from './ButtonIconListIo5.tsx';
+import ButtonIconListLu from './ButtonIconListLu.tsx';
+import ButtonIconListMd from './ButtonIconListMd.tsx';
+import ButtonIconListPi from './ButtonIconListPi.tsx';
+import ButtonIconListRx from './ButtonIconListRx.tsx';
+import ButtonIconListRi from './ButtonIconListRi.tsx';
+import ButtonIconListSl from './ButtonIconListSl.tsx';
+import ButtonIconListSi from './ButtonIconListSi.tsx';
+import ButtonIconListTb from './ButtonIconListTb.tsx';
+import ButtonIconListVsc from './ButtonIconListVsc.tsx';
+import ButtonIconListWi from './ButtonIconListWi.tsx';
 
 // Enum for Icon Libraries
 export enum IconLibraries {
@@ -85,34 +99,35 @@ export enum IconAbbreviations {
 }
 
 // Map of Icon Libraries to corresponding React components
+// Map of Icon Libraries to corresponding React components
 export const iconLibraryMap: { [key in IconLibraries]: React.ComponentType } = {
-    [IconLibraries.AntDesignIcons]: <ButtonIconListAi />,
-    [IconLibraries.BootstrapIcons]: <ButtonIconListBs />,
-    [IconLibraries.BoxIcons]: ButtonIconListBi,
-    [IconLibraries.CircumIcons]: ButtonIconListCi,
-    [IconLibraries.CssGg]: ButtonIconListCg,
-    [IconLibraries.Devicons]: ButtonIconListDi,
-    [IconLibraries.Feather]: ButtonIconListFi,
-    [IconLibraries.FlatColorIcons]: ButtonIconListFc,
-    [IconLibraries.FontAwesome5]: ButtonIconListFa,
-    [IconLibraries.FontAwesome6]: ButtonIconListFa6,
-    [IconLibraries.GameIcons]: ButtonIconListGi,
-    [IconLibraries.GithubOcticons]: ButtonIconListGo,
-    [IconLibraries.GrommetIcons]: ButtonIconListGr,
-    [IconLibraries.Heroicons]: ButtonIconListHi,
-    [IconLibraries.Heroicons2]: ButtonIconListHi2,
-    // [IconLibraries.IcoMoonFree]: ButtonIconListImf,
-    // [IconLibraries.Icons8LineAwesome]: ButtonIconListIa,
-    // [IconLibraries.Ionicons4]: ButtonIconListI4,
-    // [IconLibraries.Ionicons5]: ButtonIconListI5,
-    // [IconLibraries.Lucide]: ButtonIconListLucide,
-    // [IconLibraries.MaterialDesignIcons]: ButtonIconListMdi,
-    // [IconLibraries.PhosphorIcons]: ButtonIconListPh,
-    // [IconLibraries.RadixIcons]: ButtonIconListRi,
-    // [IconLibraries.RemixIcon]: ButtonIconListRi,
-    // [IconLibraries.SimpleIcons]: ButtonIconListSi,
-    // [IconLibraries.SimpleLineIcons]: ButtonIconListSli,
-    // [IconLibraries.TablerIcons]: ButtonIconListTi,
-    // [IconLibraries.VSCodeIcons]: ButtonIconListVsc,
-    // [IconLibraries.WeatherIcons]: ButtonIconListWi,
+    [IconLibraries.AntDesignIcons]: <ButtonIconListAi />, // JSX element for AntDesignIcons
+    [IconLibraries.BootstrapIcons]: <ButtonIconListBs />, // JSX element for BootstrapIcons
+    [IconLibraries.BoxIcons]: <ButtonIconListBi />, // JSX element for BoxIcons
+    [IconLibraries.CircumIcons]: <ButtonIconListCi />, // JSX element for CircumIcons
+    [IconLibraries.CssGg]: <ButtonIconListCg />, // JSX element for CssGg
+    [IconLibraries.Devicons]: <ButtonIconListDi />, // JSX element for Devicons
+    [IconLibraries.Feather]: <ButtonIconListFi />, // JSX element for Feather
+    [IconLibraries.FlatColorIcons]: <ButtonIconListFc />, // JSX element for FlatColorIcons
+    [IconLibraries.FontAwesome5]: <ButtonIconListFa />, // JSX element for FontAwesome5
+    [IconLibraries.FontAwesome6]: <ButtonIconListFa6 />, // JSX element for FontAwesome6
+    [IconLibraries.GameIcons]: <ButtonIconListGi />, // JSX element for GameIcons
+    [IconLibraries.GithubOcticons]: <ButtonIconListGo />, // JSX element for GithubOcticons
+    [IconLibraries.GrommetIcons]: <ButtonIconListGr />, // JSX element for GrommetIcons
+    [IconLibraries.Heroicons]: <ButtonIconListHi />, // JSX element for Heroicons
+    [IconLibraries.Heroicons2]: <ButtonIconListHi2 />, // JSX element for Heroicons2
+    [IconLibraries.IcoMoonFree]: <ButtonIconListIm />, // JSX element for IcoMoonFree
+    [IconLibraries.Icons8LineAwesome]: <ButtonIconListLia />, // JSX element for Icons8LineAwesome
+    [IconLibraries.Ionicons4]: <ButtonIconListIo />, // JSX element for Ionicons4
+    [IconLibraries.Ionicons5]: <ButtonIconListIo5 />, // JSX element for Ionicons5
+    [IconLibraries.Lucide]: <ButtonIconListLu />, // JSX element for Lucide
+    [IconLibraries.MaterialDesignIcons]: <ButtonIconListMd />, // JSX element for MaterialDesignIcons
+    [IconLibraries.PhosphorIcons]: <ButtonIconListPi />, // JSX element for PhosphorIcons
+    [IconLibraries.RadixIcons]: <ButtonIconListRx />, // JSX element for RadixIcons
+    [IconLibraries.RemixIcon]: <ButtonIconListRi />, // JSX element for RemixIcon
+    [IconLibraries.SimpleIcons]: <ButtonIconListSi />, // JSX element for SimpleIcons
+    [IconLibraries.SimpleLineIcons]: <ButtonIconListSl />, // JSX element for SimpleLineIcons
+    [IconLibraries.TablerIcons]: <ButtonIconListTb />, // JSX element for TablerIcons
+    [IconLibraries.VSCodeIcons]: <ButtonIconListVsc />, // JSX element for VSCodeIcons
+    [IconLibraries.WeatherIcons]: <ButtonIconListWi />, // JSX element for WeatherIcons
 };
