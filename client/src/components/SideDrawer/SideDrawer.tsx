@@ -7,7 +7,7 @@ import {
     ListItemButton,
     ListItemText,
 } from '@mui/material';
-import { ICON_LIBRARIES } from '../../constants.ts';
+import { IconLibraries } from '../../constants.ts';
 
 export const SideDrawer = () => {
     const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ export const SideDrawer = () => {
             onClick={toggleDrawer(false)}
         >
             <List>
-                {ICON_LIBRARIES.map((text, index) => (
+                {Object.values(IconLibraries).map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
                             <ListItemText primary={text} />

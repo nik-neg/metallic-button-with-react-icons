@@ -1,6 +1,6 @@
 import { SAppContainer, SAppContainerColumn } from './App.styles.ts';
 import { SideDrawer } from './components/SideDrawer/SideDrawer.tsx';
-import ButtonIconList from './components/ButtonIconList/ButtonIconList.tsx';
+import ButtonIconListAi from './components/lists/ButtonIconListAi.tsx';
 
 function App() {
     return (
@@ -9,7 +9,7 @@ function App() {
                 <SideDrawer />
             </SAppContainerColumn>
             <SAppContainerColumn>
-                <ButtonIconList />
+                <ButtonIconListAi />
             </SAppContainerColumn>
         </SAppContainer>
     );

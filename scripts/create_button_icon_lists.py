@@ -50,7 +50,7 @@ def generate_button_icon_list_tsx(icons, subfolder_name):
 
     # Combine everything into the ButtonIconList component structure
     button_icon_list_tsx = (
-        f'import {{ SButton, SButtonContainer, SButtonLabel, SButtonListContainer }} from "../ButtonIconList.styles";\n'
+        f'import {{ SButton, SButtonContainer, SButtonLabel, SButtonListContainer }} from "../ButtonIconList";\n'
         + "\n".join(imports)
         + "\n\nconst {component_name} = () => (\n"
         + "  <SButtonListContainer>\n"
