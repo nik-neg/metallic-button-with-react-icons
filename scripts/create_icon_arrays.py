@@ -28,6 +28,7 @@ def generate_icon_array(icon_set_name, icons):
 # Main function to process the icon folder
 def process_icons_folder():
     all_icon_arrays = ""
+    all_icon_data = "export const allIconData = [\n"
 
     # Traverse through all subfolders in the icon folder
     for subfolder in os.listdir(ICON_FOLDER_PATH):
@@ -48,9 +49,16 @@ def process_icons_folder():
                 icon_array = generate_icon_array(subfolder, icons)
                 all_icon_arrays += icon_array
 
+                # Add the icon data to the allIconData array
+                all_icon_data += f"  {subfolder}IconData,\n"
+
+    # Close the allIconData array and write all data to the output file
+    all_icon_data += "];\n"
+
     # Write the final array to the output file
     with open(OUTPUT_FILE_PATH, "w") as output_file:
         output_file.write(all_icon_arrays)
+        output_file.write(all_icon_data)
 
     print(f"Icon data has been written to {OUTPUT_FILE_PATH}")
 
