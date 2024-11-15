@@ -71,6 +71,7 @@ function App() {
 
     console.log({ selectedButtons: selectedButtonsList });
     const handleSetSelectedButtons = (value: IconLibraries) => {
+        setSearchTerm('');
         setSelectedButtonsList(value);
     };
     return (
