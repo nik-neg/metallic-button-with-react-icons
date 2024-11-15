@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { Fa42Group, Fa500Px, FaAccessibleIcon, FaAccusoft, FaAdn, FaAdversal, FaAffiliatetheme, FaAirbnb, FaAlgolia, FaAlipay, FaAmazonPay, FaAmazon, FaAmilia, FaAndroid, FaAngellist, FaAngrycreative, FaAngular, FaAppStoreIos, FaAppStore, FaApper, FaApplePay, FaApple, FaArtstation, FaAsymmetrik, FaAtlassian, FaAudible, FaAutoprefixer, FaAvianex, FaAviato, FaAws, FaBandcamp, FaBattleNet, FaBehance, FaBilibili, FaBimobject, FaBitbucket, FaBitcoin, FaBity, FaBlackTie, FaBlackberry, FaBloggerB, FaBlogger, FaBluesky, FaBluetoothB, FaBluetooth, FaBootstrap, FaBots, FaBraveReverse, FaBrave, FaBtc, FaBuffer, FaBuromobelexperte, FaBuyNLarge, FaBuysellads, FaCanadianMapleLeaf, FaCcAmazonPay, FaCcAmex, FaCcApplePay, FaCcDinersClub, FaCcDiscover, FaCcJcb, FaCcMastercard, FaCcPaypal, FaCcStripe, FaCcVisa, FaCentercode, FaCentos, FaChrome, FaChromecast, FaCloudflare, FaCloudscale, FaCloudsmith, FaCloudversify, FaCmplid, FaCodepen, FaCodiepie, FaConfluence, FaConnectdevelop, FaContao, FaCottonBureau, FaCpanel, FaCreativeCommonsBy, FaCreativeCommonsNcEu, FaCreativeCommonsNcJp, FaCreativeCommonsNc, FaCreativeCommonsNd, FaCreativeCommonsPdAlt, FaCreativeCommonsPd, FaCreativeCommonsRemix, FaCreativeCommonsSa, FaCreativeCommonsSamplingPlus, FaCreativeCommonsSampling, FaCreativeCommonsShare, FaCreativeCommonsZero, FaCreativeCommons, FaCriticalRole, FaCss3Alt, FaCss3, FaCuttlefish, FaDAndDBeyond } from "react-icons/fa";
 
-const ButtonIconListFa6 = () => (
+export const ButtonIconListFa6 = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

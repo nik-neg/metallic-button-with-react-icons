@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { DiAndroid, DiAngularSimple, DiAppcelerator, DiApple, DiAppstore, DiAptana, DiAsterisk, DiAtlassian, DiAtom, DiAws, DiBackbone, DiBingSmall, DiBintray, DiBitbucket, DiBlackberry, DiBootstrap, DiBower, DiBrackets, DiBugsense, DiCelluloid, DiChrome, DiCisco, DiClojureAlt, DiClojure, DiCloud9, DiCoda, DiCodeBadge, DiCode, DiCodeigniter, DiCodepen, DiCodrops, DiCoffeescript, DiCompass, DiComposer, DiCreativecommonsBadge, DiCreativecommons, DiCssTricks, DiCss3Full, DiCss3, DiCssdeck, DiDart, DiDatabase, DiDebian, DiDigitalOcean, DiDjango, DiDlang, DiDocker, DiDoctrine, DiDojo, DiDotnet, DiDreamweaver, DiDropbox, DiDrupal, DiEclipse, DiEmber, DiEnvato, DiErlang, DiExtjs, DiFirebase, DiFirefox, DiFsharp, DiGhostSmall, DiGhost, DiGitBranch, DiGitCommit, DiGitCompare, DiGitMerge, DiGitPullRequest, DiGit, DiGithubAlt, DiGithubBadge, DiGithubFull, DiGithub, DiGnu, DiGo, DiGoogleAnalytics, DiGoogleDrive, DiGoogleCloudPlatform, DiGrails, DiGroovy, DiGrunt, DiGulp, DiHackernews, DiHaskell, DiHeroku, DiHtml53dEffects, DiHtml5Connectivity, DiHtml5DeviceAccess, DiHtml5Multimedia, DiHtml5, DiIe, DiIllustrator, DiIntellij, DiIonic, DiJava, DiJavascript1, DiJavascript, DiJekyllSmall, DiJenkins, DiJira } from "react-icons/di";
 
-const ButtonIconListDi = () => (
+export const ButtonIconListDi = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

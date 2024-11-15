@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { ImHome, ImHome2, ImHome3, ImOffice, ImNewspaper, ImPencil, ImPencil2, ImQuill, ImPen, ImBlog, ImEyedropper, ImDroplet, ImPaintFormat, ImImage, ImImages, ImCamera, ImHeadphones, ImMusic, ImPlay, ImFilm, ImVideoCamera, ImDice, ImPacman, ImSpades, ImClubs, ImDiamonds, ImBullhorn, ImConnection, ImPodcast, ImFeed, ImMic, ImBook, ImBooks, ImLibrary, ImFileText, ImProfile, ImFileEmpty, ImFilesEmpty, ImFileText2, ImFilePicture, ImFileMusic, ImFilePlay, ImFileVideo, ImFileZip, ImCopy, ImPaste, ImStack, ImFolder, ImFolderOpen, ImFolderPlus, ImFolderMinus, ImFolderDownload, ImFolderUpload, ImPriceTag, ImPriceTags, ImBarcode, ImQrcode, ImTicket, ImCart, ImCoinDollar, ImCoinEuro, ImCoinPound, ImCoinYen, ImCreditCard, ImCalculator, ImLifebuoy, ImPhone, ImPhoneHangUp, ImAddressBook, ImEnvelop, ImPushpin, ImLocation, ImLocation2, ImCompass, ImCompass2, ImMap, ImMap2, ImHistory, ImClock, ImClock2, ImAlarm, ImBell, ImStopwatch, ImCalendar, ImPrinter, ImKeyboard, ImDisplay, ImLaptop, ImMobile, ImMobile2, ImTablet, ImTv, ImDrawer, ImDrawer2, ImBoxAdd, ImBoxRemove, ImDownload, ImUpload, ImFloppyDisk, ImDrive } from "react-icons/im";
 
-const ButtonIconListIm = () => (
+export const ButtonIconListIm = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

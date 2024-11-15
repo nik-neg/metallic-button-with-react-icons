@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { GoAlert, GoAlertFill, GoArchive, GoArrowBoth, GoArrowDown, GoArrowDownLeft, GoArrowDownRight, GoArrowLeft, GoArrowRight, GoArrowSwitch, GoArrowUp, GoArrowUpLeft, GoArrowUpRight, GoBeaker, GoBell, GoBellFill, GoBellSlash, GoBlocked, GoBold, GoBook, GoBookmark, GoBookmarkFill, GoBookmarkSlash, GoBookmarkSlashFill, GoBriefcase, GoBroadcast, GoBrowser, GoBug, GoCalendar, GoCheck, GoCheckCircle, GoCheckCircleFill, GoCheckbox, GoChecklist, GoChevronDown, GoChevronLeft, GoChevronRight, GoChevronUp, GoCircle, GoCircleSlash, GoClock, GoClockFill, GoCloud, GoCloudOffline, GoCode, GoCodeOfConduct, GoCodeReview, GoCodeSquare, GoCodescan, GoCodescanCheckmark, GoCodespaces, GoColumns, GoCommandPalette, GoComment, GoCommentDiscussion, GoCommit, GoContainer, GoCopilot, GoCopy, GoCpu, GoCreditCard, GoCrossReference, GoDash, GoDatabase, GoDependabot, GoDesktopDownload, GoDeviceCameraVideo, GoDeviceDesktop, GoDeviceMobile, GoDiamond, GoDiff, GoDiscussionClosed, GoDiscussionDuplicate, GoDiscussionOutdated, GoDot, GoDotFill, GoDownload, GoDuplicate, GoEye, GoEyeClosed, GoFile, GoFileBinary, GoFileCode, GoFileDiff, GoFileDirectory, GoFileDirectoryFill, GoFileMedia, GoFileSubmodule, GoFileSymlinkFile, GoFileZip, GoFilter, GoFlame, GoFold, GoFoldDown, GoFoldUp, GoGear, GoGift, GoGitBranch, GoGitCommit, GoGitCompare } from "react-icons/go";
 
-const ButtonIconListGo = () => (
+export const ButtonIconListGo = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

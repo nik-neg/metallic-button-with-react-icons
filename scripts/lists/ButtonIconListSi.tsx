@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { Si1001Tracklists, Si1Dot1Dot1Dot1, Si1Panel, Si1Password, Si2Fas, Si2K, Si365Datascience, Si3M, Si42, Si4Chan, Si4D, Si500Px, Si7Zip, Si99Designs, Si9Gag, SiAbbott, SiAbbrobotstudio, SiAbbvie, SiAboutdotme, SiAbstract, SiAbusedotch, SiAcademia, SiAccenture, SiAccusoft, SiAcer, SiAcm, SiActigraph, SiActivision, SiActivitypub, SiActix, SiAcura, SiAdafruit, SiAdblock, SiAdblockplus, SiAdguard, SiAdidas, SiAdminer, SiAdobe, SiAdobeacrobatreader, SiAdobeaftereffects, SiAdobeaudition, SiAdobecreativecloud, SiAdobedreamweaver, SiAdobefonts, SiAdobeillustrator, SiAdobeindesign, SiAdobelightroom, SiAdobelightroomclassic, SiAdobephotoshop, SiAdobepremierepro, SiAdobexd, SiAdonisjs, SiAdp, SiAdroll, SiAdventofcode, SiAdyen, SiAegisauthenticator, SiAerlingus, SiAeroflot, SiAeromexico, SiAerospike, SiAew, SiAffine, SiAffinity, SiAffinitydesigner, SiAffinityphoto, SiAffinitypublisher, SiAframe, SiAfterpay, SiAgora, SiAib, SiAidungeon, SiAiohttp, SiAiqfome, SiAirasia, SiAirbnb, SiAirbrake, SiAirbus, SiAirbyte, SiAircall, SiAircanada, SiAirchina, SiAirfrance, SiAirindia, SiAirplayaudio, SiAirplayvideo, SiAirtable, SiAirtel, SiAirtransat, SiAjv, SiAkamai, SiAkaunting, SiAkiflow, SiAlacritty, SiAlamy, SiAlbertheijn, SiAlby, SiAlchemy, SiAldinord, SiAldisud } from "react-icons/si";
 
-const ButtonIconListSi = () => (
+export const ButtonIconListSi = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

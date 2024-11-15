@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { FcAbout, FcAcceptDatabase, FcAddColumn, FcAddDatabase, FcAddImage, FcAddRow, FcAddressBook, FcAdvance, FcAdvertising, FcAlarmClock, FcAlphabeticalSortingAz, FcAlphabeticalSortingZa, FcAndroidOs, FcAnswers, FcApproval, FcApprove, FcAreaChart, FcAssistant, FcAudioFile, FcAutomatic, FcAutomotive, FcBadDecision, FcBarChart, FcBbc, FcBearish, FcBinoculars, FcBiohazard, FcBiomass, FcBiotech, FcBookmark, FcBriefcase, FcBrokenLink, FcBullish, FcBusinessContact, FcBusiness, FcBusinessman, FcBusinesswoman, FcButtingIn, FcCableRelease, FcCalculator, FcCalendar, FcCallTransfer, FcCallback, FcCamcorderPro, FcCamcorder, FcCameraAddon, FcCameraIdentification, FcCamera, FcCancel, FcCandleSticks, FcCapacitor, FcCdLogo, FcCellPhone, FcChargeBattery, FcCheckmark, FcCircuit, FcClapperboard, FcClearFilters, FcClock, FcCloseUpMode, FcCloth, FcCollaboration, FcCollapse, FcCollect, FcComboChart, FcCommandLine, FcComments, FcCompactCamera, FcConferenceCall, FcContacts, FcCopyleft, FcCopyright, FcCrystalOscillator, FcCurrencyExchange, FcCursor, FcCustomerSupport, FcDam, FcDataBackup, FcDataConfiguration, FcDataEncryption, FcDataProtection, FcDataRecovery, FcDataSheet, FcDatabase, FcDebian, FcDebt, FcDecision, FcDeleteColumn, FcDeleteDatabase, FcDeleteRow, FcDepartment, FcDeployment, FcDiploma1, FcDiploma2, FcDisapprove, FcDisclaimer, FcDislike, FcDisplay, FcDoNotInhale, FcDoNotInsert } from "react-icons/fc";
 
-const ButtonIconListFc = () => (
+export const ButtonIconListFc = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

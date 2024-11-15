@@ -7,13 +7,21 @@ import {
     ListItemButton,
     ListItemText,
 } from '@mui/material';
-import { IconLibraries } from '../../constants.ts';
+import { IconLibraries } from '../lists/constants.tsx';
 
-export const SideDrawer = () => {
+interface SideDrawerProps {
+    handleSetSelectedButtons: (value: string) => void;
+}
+
+export const SideDrawer = ({ handleSetSelectedButtons }: SideDrawerProps) => {
     const [open, setOpen] = useState(false);
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
+    };
+
+    const handleChoice = (event: any) => {
+        handleSetSelectedButtons(event.target.value);
     };
 
     const DrawerList = (
@@ -25,7 +33,7 @@ export const SideDrawer = () => {
             <List>
                 {Object.values(IconLibraries).map((text, index) => (
                     <ListItem key={text} disablePadding>
-                        <ListItemButton>
+                        <ListItemButton onClick={handleChoice}>
                             <ListItemText primary={text} />
                         </ListItemButton>
                     </ListItem>

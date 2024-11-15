@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { HiAcademicCap, HiAdjustments, HiAnnotation, HiArchive, HiArrowCircleDown, HiArrowCircleLeft, HiArrowCircleRight, HiArrowCircleUp, HiArrowDown, HiArrowLeft, HiArrowNarrowDown, HiArrowNarrowLeft, HiArrowNarrowRight, HiArrowNarrowUp, HiArrowRight, HiArrowSmDown, HiArrowSmLeft, HiArrowSmRight, HiArrowSmUp, HiArrowUp, HiArrowsExpand, HiAtSymbol, HiBackspace, HiBadgeCheck, HiBan, HiBeaker, HiBell, HiBookOpen, HiBookmarkAlt, HiBookmark, HiBriefcase, HiCake, HiCalculator, HiCalendar, HiCamera, HiCash, HiChartBar, HiChartPie, HiChartSquareBar, HiChatAlt2, HiChatAlt, HiChat, HiCheckCircle, HiCheck, HiChevronDoubleDown, HiChevronDoubleLeft, HiChevronDoubleRight, HiChevronDoubleUp, HiChevronDown, HiChevronLeft, HiChevronRight, HiChevronUp, HiChip, HiClipboardCheck, HiClipboardCopy, HiClipboardList, HiClipboard, HiClock, HiCloudDownload, HiCloudUpload, HiCloud, HiCode, HiCog, HiCollection, HiColorSwatch, HiCreditCard, HiCubeTransparent, HiCube, HiCurrencyBangladeshi, HiCurrencyDollar, HiCurrencyEuro, HiCurrencyPound, HiCurrencyRupee, HiCurrencyYen, HiCursorClick, HiDatabase, HiDesktopComputer, HiDeviceMobile, HiDeviceTablet, HiDocumentAdd, HiDocumentDownload, HiDocumentDuplicate, HiDocumentRemove, HiDocumentReport, HiDocumentSearch, HiDocumentText, HiDocument, HiDotsCircleHorizontal, HiDotsHorizontal, HiDotsVertical, HiDownload, HiDuplicate, HiEmojiHappy, HiEmojiSad, HiExclamationCircle, HiExclamation, HiExternalLink, HiEyeOff, HiEye, HiFastForward } from "react-icons/hi";
 
-const ButtonIconListHi = () => (
+export const ButtonIconListHi = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { RxAccessibility, RxActivityLog, RxAlignBaseline, RxAlignBottom, RxAlignCenterHorizontally, RxAlignCenterVertically, RxAlignLeft, RxAlignRight, RxAlignTop, RxAllSides, RxAngle, RxArchive, RxArrowBottomLeft, RxArrowBottomRight, RxArrowDown, RxArrowLeft, RxArrowRight, RxArrowTopLeft, RxArrowTopRight, RxArrowUp, RxAspectRatio, RxAvatar, RxBackpack, RxBadge, RxBarChart, RxBell, RxBlendingMode, RxBookmarkFilled, RxBookmark, RxBorderAll, RxBorderBottom, RxBorderDashed, RxBorderDotted, RxBorderLeft, RxBorderNone, RxBorderRight, RxBorderSolid, RxBorderSplit, RxBorderStyle, RxBorderTop, RxBorderWidth, RxBoxModel, RxBox, RxButton, RxCalendar, RxCamera, RxCardStackMinus, RxCardStackPlus, RxCardStack, RxCaretDown, RxCaretLeft, RxCaretRight, RxCaretSort, RxCaretUp, RxChatBubble, RxCheckCircled, RxCheck, RxCheckbox, RxChevronDown, RxChevronLeft, RxChevronRight, RxChevronUp, RxCircleBackslash, RxCircle, RxClipboardCopy, RxClipboard, RxClock, RxCode, RxCodesandboxLogo, RxColorWheel, RxColumnSpacing, RxColumns, RxCommit, RxComponent1, RxComponent2, RxComponentBoolean, RxComponentInstance, RxComponentNone, RxComponentPlaceholder, RxContainer, RxCookie, RxCopy, RxCornerBottomLeft, RxCornerBottomRight, RxCornerTopLeft, RxCornerTopRight, RxCorners, RxCountdownTimer, RxCounterClockwiseClock, RxCrop, RxCross1, RxCross2, RxCrossCircled, RxCrosshair1, RxCrosshair2, RxCrumpledPaper, RxCube, RxCursorArrow, RxCursorText, RxDash } from "react-icons/rx";
 
-const ButtonIconListRx = () => (
+export const ButtonIconListRx = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

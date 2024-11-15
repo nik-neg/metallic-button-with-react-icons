@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 
 
-const ButtonIconListLib = () => (
+export const ButtonIconListLib = () => (
   <SButtonListContainer>
 
   </SButtonListContainer>

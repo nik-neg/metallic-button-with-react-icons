@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { BiAbacus, BiAccessibility, BiAddToQueue, BiAdjust, BiAlarmAdd, BiAlarmExclamation, BiAlarmOff, BiAlarmSnooze, BiAlarm, BiAlbum, BiAlignJustify, BiAlignLeft, BiAlignMiddle, BiAlignRight, BiAnalyse, BiAnchor, BiAngry, BiAperture, BiArch, BiArchiveIn, BiArchiveOut, BiArchive, BiArea, BiArrowBack, BiArrowFromBottom, BiArrowFromLeft, BiArrowFromRight, BiArrowFromTop, BiArrowToBottom, BiArrowToLeft, BiArrowToRight, BiArrowToTop, BiAt, BiAtom, BiAward, BiBadgeCheck, BiBadge, BiBaguette, BiBall, BiBandAid, BiBarChartAlt2, BiBarChartAlt, BiBarChartSquare, BiBarChart, BiBarcodeReader, BiBarcode, BiBaseball, BiBasket, BiBasketball, BiBath, BiBattery, BiBed, BiBeenHere, BiBeer, BiBellMinus, BiBellOff, BiBellPlus, BiBell, BiBible, BiBitcoin, BiBlanket, BiBlock, BiBluetooth, BiBody, BiBold, BiBoltCircle, BiBomb, BiBone, BiBong, BiBookAdd, BiBookAlt, BiBookBookmark, BiBookContent, BiBookHeart, BiBookOpen, BiBookReader, BiBook, BiBookmarkAltMinus, BiBookmarkAltPlus, BiBookmarkAlt, BiBookmarkHeart, BiBookmarkMinus, BiBookmarkPlus, BiBookmark, BiBookmarks, BiBorderAll, BiBorderBottom, BiBorderInner, BiBorderLeft, BiBorderNone, BiBorderOuter, BiBorderRadius, BiBorderRight, BiBorderTop, BiBot, BiBowlHot, BiBowlRice, BiBowlingBall, BiBox, BiBracket } from "react-icons/bi";
 
-const ButtonIconListBi = () => (
+export const ButtonIconListBi = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

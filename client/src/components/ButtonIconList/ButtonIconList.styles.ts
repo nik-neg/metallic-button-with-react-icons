@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BACKGROUND_COLOR } from '../../constants';
+import { BACKGROUND_COLOR } from '../../constants.ts';
 
 export const SButtonListContainer = styled.div`
     width: calc(100vw - 350px);

@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { GrAccessibility, GrAchievement, GrAction, GrActions, GrAd, GrAddCircle, GrAdd, GrAdobeCreativeCloud, GrAed, GrAggregate, GrAidOption, GrAid, GrAlarm, GrAlert, GrAmazon, GrAmex, GrAnalytics, GrAnchor, GrAndroid, GrAnnounce, GrAppleAppStore, GrAppleMusic, GrApplePodcasts, GrApple, GrAppsRounded, GrApps, GrArchive, GrArchlinux, GrArticle, GrAruba, GrAscend, GrAscending, GrAssistListening, GrAtm, GrAttachment, GrAttraction, GrBaby, GrBackTen, GrBarChart, GrBar, GrBasket, GrBeacon, GrBike, GrBitcoin, GrBladesHorizontal, GrBladesVertical, GrBlockQuote, GrBlog, GrBluetooth, GrBold, GrBook, GrBookmark, GrBottomCorner, GrBraille, GrBriefcase, GrBrush, GrBucket, GrBug, GrBundle, GrBus, GrBusinessService, GrCafeteria, GrCalculator, GrCalendar, GrCamera, GrCapacity, GrCar, GrCaretDownFill, GrCaretDown, GrCaretLeftFill, GrCaretNext, GrCaretPrevious, GrCaretRightFill, GrCaretUpFill, GrCaretUp, GrCart, GrCatalogOption, GrCatalog, GrCentos, GrCertificate, GrChannel, GrChapterAdd, GrChapterNext, GrChapterPrevious, GrChatOption, GrChat, GrCheckboxSelected, GrCheckbox, GrCheckmark, GrChrome, GrCircleAlert, GrCircleInformation, GrCirclePlay, GrCircleQuestion, GrClearOption, GrClear, GrCli, GrClipboard, GrClock, GrClone } from "react-icons/gr";
 
-const ButtonIconListGr = () => (
+export const ButtonIconListGr = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

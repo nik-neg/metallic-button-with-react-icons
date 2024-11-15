@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { CiAirportSign1, CiAlarmOff, CiAlarmOn, CiAlignBottom, CiAlignCenterH, CiAlignCenterV, CiAlignLeft, CiAlignRight, CiAlignTop, CiApple, CiAt, CiAvocado, CiBacon, CiBadgeDollar, CiBag1, CiBandage, CiBank, CiBarcode, CiBaseball, CiBasketball, CiBatteryCharging, CiBatteryEmpty, CiBatteryFull, CiBeaker1, CiBeerMugFull, CiBellOff, CiBellOn, CiBezier, CiBitcoin, CiBluetooth, CiBookmarkCheck, CiBookmarkMinus, CiBookmarkPlus, CiBookmarkRemove, CiBookmark, CiBowlNoodles, CiBoxList, CiBoxes, CiBrightnessDown, CiBrightnessUp, CiBullhorn, CiBurger, CiCalculator1, CiCalculator2, CiCalendarDate, CiCalendar, CiCamera, CiChat1, CiChat2, CiCircleAlert, CiCircleCheck, CiCircleChevDown, CiCircleChevLeft, CiCircleChevRight, CiCircleChevUp, CiCircleInfo, CiCircleList, CiCircleMinus, CiCircleMore, CiCirclePlus, CiCircleQuestion, CiCircleRemove, CiClock1, CiClock2, CiCloudDrizzle, CiCloudMoon, CiCloudOff, CiCloudOn, CiCloudRainbow, CiCloudSun, CiCloud, CiCoffeeBean, CiCoffeeCup, CiCoinInsert, CiCoins1, CiCompass1, CiCreditCard1, CiCreditCard2, CiCreditCardOff, CiCrop, CiDark, CiDatabase, CiDeliveryTruck, CiDesktopMouse1, CiDesktopMouse2, CiDesktop, CiDiscount1, CiDollar, CiDroplet, CiDumbbell, CiEdit, CiEraser, CiExport, CiFaceFrown, CiFaceMeh, CiFaceSmile, CiFacebook, CiFileOff, CiFileOn, CiFilter } from "react-icons/ci";
 
-const ButtonIconListCi = () => (
+export const ButtonIconListCi = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>

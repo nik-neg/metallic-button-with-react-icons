@@ -1,7 +1,7 @@
 import { SButton, SButtonContainer, SButtonLabel, SButtonListContainer } from "../ButtonIconList";
 import { SlActionRedo, SlActionUndo, SlAnchor, SlArrowDownCircle, SlArrowDown, SlArrowLeftCircle, SlArrowLeft, SlArrowRightCircle, SlArrowRight, SlArrowUpCircle, SlArrowUp, SlBadge, SlBag, SlBan, SlBasketLoaded, SlBasket, SlBell, SlBookOpen, SlBriefcase, SlBubble, SlBubbles, SlBulb, SlCalculator, SlCalender, SlCallEnd, SlCallIn, SlCallOut, SlCamera, SlCamrecorder, SlChart, SlCheck, SlChemistry, SlClock, SlClose, SlCloudDownload, SlCloudUpload, SlCompass, SlControlEnd, SlControlForward, SlControlPause, SlControlPlay, SlControlRewind, SlControlStart, SlCreditCard, SlCrop, SlCup, SlCursorMove, SlCursor, SlDiamond, SlDirection, SlDirections, SlDisc, SlDislike, SlDoc, SlDocs, SlDrawer, SlDrop, SlEarphonesAlt, SlEarphones, SlEmotsmile, SlEnergy, SlEnvelopeOpen, SlEnvolopeLetter, SlEnvolope, SlEqualizer, SlEvent, SlExclamation, SlEye, SlEyeglass, SlFeed, SlFilm, SlFire, SlFlag, SlFolderAlt, SlFolder, SlFrame, SlGameController, SlGhost, SlGlobeAlt, SlGlobe, SlGraduation, SlGraph, SlGrid, SlHandbag, SlHeart, SlHome, SlHourglass, SlInfo, SlKey, SlLayers, SlLike, SlLink, SlList, SlLocationPin, SlLockOpen, SlLock, SlLogin, SlLogout, SlLoop, SlMagicWand } from "react-icons/sl";
 
-const ButtonIconListSl = () => (
+export const ButtonIconListSl = () => (
   <SButtonListContainer>
         <SButtonContainer>
             <SButton>
