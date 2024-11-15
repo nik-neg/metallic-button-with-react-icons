@@ -23,13 +23,8 @@ export const SideDrawer = ({
 }: SideDrawerProps) => {
     const handleSearch = (event: ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        handleSetSearchTerm(value);
 
-        // const filtered = Object.keys(iconLibraryMap)
-        //     .filter((key) => key.toLowerCase().includes(value.toLowerCase()))
-        //     .map((key) => iconLibraryMap[key as keyof typeof iconLibraryMap]);
-        //
-        // setFilteredLibraries(filtered);
+        handleSetSearchTerm(value);
     };
 
     const [open, setOpen] = useState(false);

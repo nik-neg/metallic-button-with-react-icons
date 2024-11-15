@@ -7,6 +7,7 @@ import {
 } from './ButtonIconList.styles.ts';
 
 export const ButtonIconList = ({ icons }: IButtonIconListProps) => {
+    console.log({ icons });
     return (
         <SButtonListContainer>
             {icons.map(({ Icon, label }) => (

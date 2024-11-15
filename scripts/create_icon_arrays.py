@@ -14,13 +14,13 @@ def extract_icons_from_dts(dts_content):
     return re.findall(pattern, dts_content)
 
 # Function to generate the TypeScript array content
-def generate_icon_array(icon_set_name, icons):
+def generate_icon_array(icon_set_name, icons, relative_path):
     array_data = f"// {icon_set_name} Icons\n"
     array_data += f"export const {icon_set_name}IconData = [\n"
 
     # Loop through the icons and create the required array of objects
     for icon in icons:
-        array_data += f"  {{ label: '{icon}' }},\n"
+        array_data += f"  {{ label: '{icon}', relativePath: '{relative_path}' }},\n"
 
     array_data += "];\n\n"
     return array_data
@@ -29,6 +29,9 @@ def generate_icon_array(icon_set_name, icons):
 def process_icons_folder():
     all_icon_arrays = ""
     all_icon_data = "export const allIconData = [\n"
+
+    # List to hold each icon data array reference
+    icon_data_references = []
 
     # Traverse through all subfolders in the icon folder
     for subfolder in os.listdir(ICON_FOLDER_PATH):
@@ -45,15 +48,16 @@ def process_icons_folder():
                 # Extract icon names from the dts content
                 icons = extract_icons_from_dts(dts_content)
 
-                # Generate the icon array for the specific icon set
-                icon_array = generate_icon_array(subfolder, icons)
+                # Generate the icon array for the specific icon set, adding relativePath
+                icon_array = generate_icon_array(subfolder, icons, subfolder)
                 all_icon_arrays += icon_array
 
-                # Add the icon data to the allIconData array
-                all_icon_data += f"  {subfolder}IconData,\n"
+                # Add the icon data reference to the list
+                icon_data_references.append(f"{subfolder}IconData")
 
-    # Close the allIconData array and write all data to the output file
-    all_icon_data += "];\n"
+    # Construct the allIconData array using destructuring
+    all_icon_data += ",\n  ".join([f"...{ref}" for ref in icon_data_references])
+    all_icon_data += "\n];\n"
 
     # Write the final array to the output file
     with open(OUTPUT_FILE_PATH, "w") as output_file:

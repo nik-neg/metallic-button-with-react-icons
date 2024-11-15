@@ -4,7 +4,8 @@ export interface IButtonIconListProps {
     icons: IButtonData[];
 }
 
-interface IButtonData {
+export interface IButtonData {
     Icon: IconType;
     label: string;
+    relativePath?: string;
 }
