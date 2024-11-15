@@ -1,11 +1,4 @@
-import {
-    Box,
-    Drawer,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemText,
-} from '@mui/material';
+import { Drawer } from '@mui/material';
 import {
     SAppContainer,
     SAppContainerColumn,
@@ -116,33 +109,8 @@ import {
     VscDebugBreakpointUnsupported,
     VscDebugConsole,
 } from 'react-icons/vsc';
-import { useState } from 'react';
-import { ICON_LIBRARIES } from './constants.ts';
 
 function App() {
-    const [open, setOpen] = useState(false);
-
-    const toggleDrawer = (newOpen: boolean) => () => {
-        setOpen(newOpen);
-    };
-
-    const DrawerList = (
-        <Box
-            sx={{ width: 250 }}
-            role="presentation"
-            onClick={toggleDrawer(false)}
-        >
-            <List>
-                {ICON_LIBRARIES.map((text, index) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
-                    </ListItem>
-                ))}
-            </List>
-        </Box>
-    );
     return (
         <SAppContainer>
             <SAppContainerColumn>
@@ -154,7 +122,7 @@ function App() {
                 <SButtonListContainer>
                     <SButtonContainer>
                         <SButton>
-                            <VscAccount size={25} aria-label={'Account'} />
+                            <VscAccount size={25} aria-label={'VscAccount'} />
                         </SButton>
                         <SButtonLabel>VscAccount</SButtonLabel>
                     </SButtonContainer>
