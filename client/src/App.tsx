@@ -1,7 +1,6 @@
 import { SAppContainer, SAppContainerColumn } from './App.styles.ts';
 import { SideDrawer } from './components/SideDrawer/SideDrawer.tsx';
 import { useEffect, useState } from 'react';
-import { ButtonIconList } from './components/ButtonIconList/ButtonIconList.tsx';
 import { IButtonData } from './components/ButtonIconList/types.ts';
 import { useIcons } from './hooks/useIcons.ts';
 import { useDispatch } from 'react-redux';
@@ -18,7 +17,6 @@ function App() {
     const { iconsBySet } = useIcons();
 
     useEffect(() => {
-        // init store
         dispatch(initStore(iconsBySet));
     }, [iconsBySet]);
 
@@ -42,11 +40,11 @@ function App() {
                 />
             </SAppContainerColumn>
             <SAppContainerColumn>
-                {searchTerm ? (
-                    <ButtonIconList icons={filteredIcons} />
-                ) : (
-                    <ButtonIconList icons={iconsBySet[selectedButtonsList]} />
-                )}
+                {/*{searchTerm ? (*/}
+                {/*    <ButtonIconList icons={filteredIcons} />*/}
+                {/*) : (*/}
+                {/*    <ButtonIconList icons={iconsBySet[selectedButtonsList]} />*/}
+                {/*)}*/}
             </SAppContainerColumn>
         </SAppContainer>
     );

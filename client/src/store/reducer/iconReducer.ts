@@ -8,6 +8,7 @@ export const iconSlice = createSlice({
     },
     reducers: {
         initStore: (state, action) => {
+            console.log({ d: action.payload });
             state.icons = action.payload;
         },
         filterIcons: (state, action) => {
