@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 
 export interface IButtonIconListProps {
-    labels: IButtonData[];
+    labels: string[];
 }
 
 export interface IButtonData {
