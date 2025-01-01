@@ -8,10 +8,10 @@ import {
     ListItemText,
     TextField,
 } from '@mui/material';
-import { IconLibraries } from '../lists/constants.tsx';
+import { ICON_SET_NAMES } from '../../constants.ts';
 
 interface SideDrawerProps {
-    handleSetSelectedButtons: (value: IconLibraries) => void;
+    handleSetSelectedButtons: (libraryName: string) => void;
     handleSetSearchTerm: (value: string) => void;
     searchTerm: string;
 }
@@ -33,8 +33,8 @@ export const SideDrawer = ({
         setOpen(newOpen);
     };
 
-    const handleChoice = (text: string) => {
-        handleSetSelectedButtons(text as IconLibraries);
+    const handleChoice = (libraryName: string) => {
+        handleSetSelectedButtons(libraryName);
     };
 
     const DrawerList = (
@@ -52,8 +52,8 @@ export const SideDrawer = ({
                 sx={{ marginBottom: 2 }}
             />
             <List>
-                {Object.values(IconLibraries).map((text, index) => (
-                    <ListItem key={text} disablePadding>
+                {Object.values(ICON_SET_NAMES).map((text, index) => (
+                    <ListItem key={text + index} disablePadding>
                         <ListItemButton onClick={() => handleChoice(text)}>
                             <ListItemText primary={text} />
                         </ListItemButton>
