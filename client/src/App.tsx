@@ -5,6 +5,8 @@ import { IButtonData } from './components/ButtonIconList/types.ts';
 import { useIcons } from './hooks/useIcons.ts';
 import { useDispatch } from 'react-redux';
 import { initStore } from './store/reducer/iconReducer.ts';
+import { ButtonIconList } from './components/ButtonIconList/ButtonIconList.tsx';
+import { NAMES_SET_ICONS } from './constants.ts';
 
 // use redux ?
 function App() {
@@ -24,10 +26,14 @@ function App() {
         setSearchTerm(value);
     };
 
-    const [selectedButtonsList, setSelectedButtonsList] = useState('ai');
+    const [selectedButtonsList, setSelectedButtonsList] =
+        useState<string>('ai');
 
     const handleSetSelectedButtons = (libraryName: string) => {
         setSearchTerm('');
+        setSelectedButtonsList(NAMES_SET_ICONS[libraryName]);
+
+        console.log({ libraryName });
         // choose list of icons
     };
     return (
@@ -40,11 +46,11 @@ function App() {
                 />
             </SAppContainerColumn>
             <SAppContainerColumn>
-                {/*{searchTerm ? (*/}
-                {/*    <ButtonIconList icons={filteredIcons} />*/}
-                {/*) : (*/}
-                {/*    <ButtonIconList icons={iconsBySet[selectedButtonsList]} />*/}
-                {/*)}*/}
+                {searchTerm ? (
+                    <ButtonIconList labels={filteredIcons} />
+                ) : (
+                    <ButtonIconList labels={iconsBySet[selectedButtonsList]} />
+                )}
             </SAppContainerColumn>
         </SAppContainer>
     );

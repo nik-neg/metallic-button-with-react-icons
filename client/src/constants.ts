@@ -1,3 +1,5 @@
+import { reverseMap } from './utils.ts';
+
 export const BACKGROUND_COLOR = 'black';
 
 export const ICON_SET_NAMES: Record<string, string> = {
@@ -30,3 +32,6 @@ export const ICON_SET_NAMES: Record<string, string> = {
     vsc: 'VS Code Icons',
     wi: 'Weather Icons',
 };
+
+export const NAMES_SET_ICONS: Record<string, string> =
+    reverseMap(ICON_SET_NAMES);

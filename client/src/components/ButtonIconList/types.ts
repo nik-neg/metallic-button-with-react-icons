@@ -1,11 +1,11 @@
 import { IconType } from 'react-icons';
 
 export interface IButtonIconListProps {
-    icons: IButtonData[];
+    labels: IButtonData[];
 }
 
 export interface IButtonData {
     Icon: IconType;
     label: string;
-    relativePath?: string;
+    // relativePath?: string;
 }
