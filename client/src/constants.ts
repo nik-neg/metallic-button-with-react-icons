@@ -35,3 +35,5 @@ export const ICON_SET_NAMES: Record<string, string> = {
 
 export const NAMES_SET_ICONS: Record<string, string> =
     reverseMap(ICON_SET_NAMES);
+
+export type ReactIconsKeys = keyof typeof ICON_SET_NAMES;

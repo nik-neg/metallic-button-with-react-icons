@@ -3,10 +3,14 @@ import { SideDrawer } from './components/SideDrawer/SideDrawer.tsx';
 import { useEffect, useState } from 'react';
 import { IButtonData } from './components/ButtonIconList/types.ts';
 import { useIcons } from './hooks/useIcons.ts';
-import { useDispatch } from 'react-redux';
-import { initStore } from './store/reducer/iconReducer.ts';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+    filterIcons,
+    IconState,
+    initStore,
+} from './store/reducer/iconReducer.ts';
 import { ButtonIconList } from './components/ButtonIconList/ButtonIconList.tsx';
-import { NAMES_SET_ICONS } from './constants.ts';
+import { NAMES_SET_ICONS, ReactIconsKeys } from './constants.ts';
 
 // use redux ?
 function App() {
@@ -16,6 +20,12 @@ function App() {
 
     const [filteredIcons, setFilteredIcons] = useState<IButtonData[]>([]);
 
+    const filteredIconsState = useSelector(
+        (state: IconState) => state?.icons?.searchedIcons
+    );
+
+    console.log({ filteredIconsState });
+
     const { iconsBySet } = useIcons();
 
     useEffect(() => {
@@ -24,10 +34,12 @@ function App() {
 
     const handleSetSearchTerm = async (value: string) => {
         setSearchTerm(value);
+
+        dispatch(filterIcons(value));
     };
 
     const [selectedButtonsList, setSelectedButtonsList] =
-        useState<string>('ai');
+        useState<ReactIconsKeys>('ai');
 
     const handleSetSelectedButtons = (libraryName: string) => {
         setSearchTerm('');
@@ -47,7 +59,7 @@ function App() {
             </SAppContainerColumn>
             <SAppContainerColumn>
                 {searchTerm ? (
-                    <ButtonIconList labels={filteredIcons} />
+                    <ButtonIconList labels={filteredIconsState} />
                 ) : (
                     <ButtonIconList labels={iconsBySet[selectedButtonsList]} />
                 )}
