@@ -1,5 +1,11 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { BACKGROUND_COLOR } from '../../constants.ts';
+
+const slide = keyframes`
+    100% {
+        transform: translateX(200%);
+    }
+`;
 
 export const SButtonListContainer = styled.div`
     width: calc(100vw - 350px);
@@ -31,6 +37,8 @@ export const SButton = styled.button<SButtonProps>`
     width: ${({ width }) => width ?? '100px'};
     height: ${({ height }) => height ?? '3rem'};
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 
     border-width: 3px;
     border-radius: 10px;
@@ -49,13 +57,36 @@ export const SButton = styled.button<SButtonProps>`
         border-color 0.3s ease;
 
     &:hover {
-        background: rgb(225, 225, 225); /* Background change on hover */
-        //border: 3px solid black; /* Keep the same border color on click */
+        &:after {
+            content: '';
+            top: 0;
+            transform: translateX(-200%);
+            width: 50px;
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            animation: ${slide} 1.65s 0.2s forwards;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.8) 50%,
+                rgba(128, 186, 232, 0) 99%,
+                rgba(125, 185, 232, 0) 94%
+            );
+        }
+
+        animation: changeBackground 0s ease 0.9s forwards;
     }
 
     &:active {
-        border: 3px solid ${BACKGROUND_COLOR}; /* Keep the same border color on click */
-        transform: none; /* No scaling or transformation on click */
+        border: 3px solid ${BACKGROUND_COLOR};
+        transform: none;
+    }
+
+    @keyframes changeBackground {
+        to {
+            background: rgb(225, 225, 225, 0.9);
+        }
     }
 `;
 
