@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SMetallicButton } from './MetallicButton.styles';
 
-// Import icon series
 import * as AntIcons from 'react-icons/ai';
 import * as BootstrapIcons from 'react-icons/bs';
 import * as BoxIcons from 'react-icons/bi';
@@ -28,6 +27,7 @@ import * as TablerIcons from 'react-icons/tb';
 import * as ThemifyIcons from 'react-icons/ti';
 import * as VSCodeIcons from 'react-icons/vsc';
 import * as WeatherIcons from 'react-icons/wi';
+import { SEARCH_LENGTH_MAX } from './constants';
 
 const meta: Meta<typeof SMetallicButton> = {
     component: SMetallicButton,
@@ -89,7 +89,6 @@ const meta: Meta<typeof SMetallicButton> = {
 export default meta;
 type Story = StoryObj<typeof SMetallicButton>;
 
-// Icon series configuration
 const iconSeries = [
     { name: 'Ant Design Icons', icons: AntIcons, count: 831 },
     { name: 'Bootstrap Icons', icons: BootstrapIcons, count: 2716 },
@@ -118,8 +117,7 @@ const iconSeries = [
     { name: 'Weather Icons', icons: WeatherIcons, count: 219 },
 ];
 
-// Dynamic icon series search story
-export const IconSeriesSearch: Story = {
+export const ReactIconsSearch: Story = {
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
         const [selectedSeries, setSelectedSeries] = useState(iconSeries[0]);
@@ -127,7 +125,7 @@ export const IconSeriesSearch: Story = {
 
         const filteredIcons = Object.keys(selectedSeries.icons)
             .filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
-            .slice(0, 50); // Limit to 50 icons for performance
+            .slice(0, SEARCH_LENGTH_MAX);
 
         return (
             <div
