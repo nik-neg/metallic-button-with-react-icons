@@ -1,0 +1,34 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "rootDir": "src",
+      "outDir": "dist",
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "paths": {
+        "@components/*": [
+          "./src/components/*"
+        ],
+        "@elements/*": [
+          "./src/elements/*"
+        ],
+        "@enums/*": [
+          "./src/enums/*"
+        ],
+        "@/helpers/*": [
+          "./src/helpers/*"
+        ]
+      }
+    },
+    "exclude": [
+      "node_modules",
+      "dist",
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "**/*.spec.ts",
+      "**/*.spec.tsx",
+      "**/*.stories.ts",
+      "**/*.stories.tsx"
+    ]
+  }

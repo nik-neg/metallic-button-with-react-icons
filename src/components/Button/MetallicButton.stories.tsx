@@ -123,7 +123,7 @@ export const IconSeriesSearch: Story = {
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
         const [selectedSeries, setSelectedSeries] = useState(iconSeries[0]);
-        const [selectedIcon, setSelectedIcon] = useState('');
+        const [selectedIcon] = useState('');
 
         const filteredIcons = Object.keys(selectedSeries.icons)
             .filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
