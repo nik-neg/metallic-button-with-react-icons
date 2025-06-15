@@ -9,7 +9,7 @@ export interface MetallicProps {
 
 const createSlideKeyframes = (width: number = 100) => keyframes`
     0% {
-        transform: translateX(-${width}%);
+        transform: translateX(-80%);
     }
     100% {
         transform: translateX(${width}%);
