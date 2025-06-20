@@ -4,10 +4,11 @@ A customizable React button component with a metallic look and a configurable sh
 
 ## Installation
 
-To install the component, run the following command in your project directory:
+To run the project:
 
 ```bash
-npm install metallic-button-with-react-icons
+npm install
+npm run storybook
 ```
 
 ## Usage
