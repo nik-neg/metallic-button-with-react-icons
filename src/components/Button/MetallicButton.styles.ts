@@ -59,63 +59,62 @@ export const SStoryContainer = styled.div`
 `;
 
 export const SIconSearchContainer = styled.div`
+    max-width: 1200px;
+    min-height: 100vh;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    max-width: 100vw;
-    min-height: 100vh;
-    height: fit-content;
 
-    @media (max-width: 768px) {
+    @media (max-width: 468px) {
         gap: 1rem;
+        width: 400px;
     }
 `;
 
 export const SControlsContainer = styled.div`
+    width: 100%;
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
-    max-width: 100%;
+    align-items: center;
 
-    @media (max-width: 768px) {
+    @media (max-width: 468px) {
         flex-direction: column;
-        align-items: stretch;
-        width: 100%;
+        align-items: center;
+        width: 400px;
     }
 `;
 
 export const SSeriesSelect = styled.select`
+    max-width: 300px;
+    width: 100%;
     padding: 0.5rem;
     border-radius: 4px;
     background-color: #333;
     color: white;
     border: 1px solid #666;
-    max-width: 300px;
-    width: 100%;
 
-    @media (min-width: 769px) {
-        width: auto;
+    @media (max-width: 469px) {
     }
 `;
 
 export const SSearchInput = styled.input`
+    max-width: 300px;
     padding: 0.5rem;
     border-radius: 4px;
     background-color: #333;
     color: white;
     border: 1px solid #666;
-    width: 100%;
 
-    @media (min-width: 769px) {
-        width: auto;
+    @media (min-width: 469px) {
     }
 `;
 
 export const SIconGridContainer = styled.div`
+    width: 100%;
     height: fit-content;
     background-color: black;
-    width: 100%;
 `;
 
 export const SNoResults = styled.div`
@@ -123,7 +122,13 @@ export const SNoResults = styled.div`
     text-align: center;
 `;
 
-export const SSeriesGroupContainer = styled.div``;
+export const SSeriesGroupContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+`;
 
 export const SSeriesTitle = styled.h3`
     color: white;
@@ -147,7 +152,8 @@ export const SIconsWrapper = styled.div`
     height: fit-content;
 
     @media (max-width: 768px) {
+        padding: 0 2rem;
         gap: 0.5rem;
-        justify-content: center;
+        justify-content: flex-start;
     }
 `;
