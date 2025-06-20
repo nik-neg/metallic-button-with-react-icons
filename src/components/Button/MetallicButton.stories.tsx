@@ -103,14 +103,14 @@ export const Default: Story = {
         </SMetallicButton>
     ),
     args: {
-        shouldShine: true,
+        $shouldShine: true,
         width: MIN_WIDTH,
         height: MIN_HEIGHT,
         shineSpeed: 2,
         iconSize: 24,
-        shineColor: 'rgba(255, 255, 255, 0.5)',
+        $shineColor: 'rgba(255, 255, 255, 0.5)',
         iconColor: 'black',
-        shineDirection: 'horizontal',
+        $shineDirection: 'horizontal',
     },
 };
 
@@ -275,7 +275,7 @@ export const ReactIconsSearch: Story = {
                                         }}
                                     >
                                         {series.icons.map(({ name, component: Icon }) => (
-                                            <SMetallicButton key={name} iconSize={24} shouldShine={true}>
+                                            <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
                                                 <Icon size={24} />
                                             </SMetallicButton>
                                         ))}
@@ -286,7 +286,7 @@ export const ReactIconsSearch: Story = {
                     ) : (
                         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             {seriesIcons.map(({ name, component: Icon }) => (
-                                <SMetallicButton key={name} iconSize={24} shouldShine={true}>
+                                <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
                                     <Icon size={24} />
                                 </SMetallicButton>
                             ))}

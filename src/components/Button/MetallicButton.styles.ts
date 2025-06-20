@@ -8,11 +8,11 @@ interface SMetallicButtonProps extends MetallicProps {
     width?: number;
     height?: number;
     icon?: IconType;
-    iconSize?: number;
-    iconColor?: string;
-    shineColor?: string;
-    shineSpeed?: number;
-    shineDirection?: 'horizontal' | 'vertical';
+    $iconSize?: number;
+    $iconColor?: string;
+    $shineColor?: string;
+    $shineSpeed?: number;
+    $shineDirection?: 'horizontal' | 'vertical';
 }
 
 export const SMetallicButton = styled.button<SMetallicButtonProps>`
@@ -38,8 +38,8 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
         })}
 
     svg {
-        width: ${({ iconSize }) => iconSize ?? 24}px;
-        height: ${({ iconSize }) => iconSize ?? 24}px;
-        fill: ${({ iconColor }) => iconColor ?? 'inherit'};
+        width: ${({ $iconSize }) => $iconSize ?? 24}px;
+        height: ${({ $iconSize }) => $iconSize ?? 24}px;
+        fill: ${({ $iconColor }) => $iconColor ?? 'inherit'};
     }
 `;
