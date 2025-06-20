@@ -11,37 +11,6 @@ npm install
 npm run storybook
 ```
 
-## Usage
-
-Here's an example of how to use the `MetallicButton` component in your React application:
-
-```jsx
-import React from 'react';
-import { MetallicButton } from 'metallic-button';
-import { FaBeer } from 'react-icons/fa';
-
-const App = () => {
-    return (
-        <div>
-            <MetallicButton
-                onClick={() => alert('Button clicked!')}
-                width={200}
-                height={50}
-                $shouldShine={true}
-                $shineDirection="horizontal"
-                $iconSize={24}
-                $iconColor="#fff"
-                icon={FaBeer}
-            >
-                Click Me
-            </MetallicButton>
-        </div>
-    );
-};
-
-export default App;
-```
-
 ## Props
 
 | Prop              | Type                        | Default                    | Description                                                             |
