@@ -112,6 +112,7 @@ export const SSearchInput = styled.input`
 `;
 
 export const SIconGridContainer = styled.div`
+    padding: 0 1rem;
     width: 400px;
     height: fit-content;
     background-color: black;
@@ -123,11 +124,9 @@ export const SNoResults = styled.div`
 `;
 
 export const SSeriesGroupContainer = styled.div`
-    padding: 0 2rem;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 1rem;
 `;
 
