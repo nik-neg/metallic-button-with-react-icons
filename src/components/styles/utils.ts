@@ -9,14 +9,12 @@ import {
     HORIZONTAL_OFFSET,
 } from '../Button';
 
-const createHorizontalSlideKeyframes = (width: number = 100) => keyframes`
+const createHorizontalSlideKeyframes = (from: number, to: number) => keyframes`
     0% {
-        transform: translateX(-${
-            HORIZONTAL_OFFSET * (width / MIN_WIDTH > BASE_COEFFICIENT ? width / MIN_WIDTH : BASE_COEFFICIENT)
-        }%);
+        transform: translateX(-${from}%);
     }
     100% {
-        transform: translateX(${width + (width / MIN_WIDTH - HORIZONTAL_COEFFICIENT) * MIN_WIDTH}%);
+        transform: translateX(${to}%);
     }
 `;
 
@@ -46,14 +44,20 @@ export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
 `;
 
 export const shineEffect = ({
-    width,
+    width = MIN_WIDTH,
     $shineColor = 'rgba(255, 255, 255, 0.8)',
     $shineSpeed = BASE_DURATION_SHINE,
     $shineDirection = 'horizontal',
 }: MetallicProps) => {
     const isVertical = $shineDirection === 'vertical';
 
-    const animation = isVertical ? createVerticalSlideKeyframes() : createHorizontalSlideKeyframes(width);
+    const isWidthBiggerThanBaseCoefficient = width / MIN_WIDTH > BASE_COEFFICIENT;
+
+    const from = HORIZONTAL_OFFSET * (isWidthBiggerThanBaseCoefficient ? width / MIN_WIDTH : BASE_COEFFICIENT);
+
+    const to = width + (width / MIN_WIDTH - HORIZONTAL_COEFFICIENT) * MIN_WIDTH;
+
+    const animation = isVertical ? createVerticalSlideKeyframes() : createHorizontalSlideKeyframes(from, to);
 
     const gradientDirection = isVertical ? 'to bottom' : 'to right';
 
