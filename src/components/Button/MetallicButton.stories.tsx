@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SMetallicButton } from './MetallicButton.styles';
 
+import * as FontAwesomeIcons from 'react-icons/fa';
+import * as FontAwesome6Icons from 'react-icons/fa6';
 import * as AntIcons from 'react-icons/ai';
 import * as BootstrapIcons from 'react-icons/bs';
 import * as BoxIcons from 'react-icons/bi';
@@ -92,22 +94,23 @@ type Story = StoryObj<typeof SMetallicButton>;
 export const Default: Story = {
     render: ({ children, ...args }) => (
         <SMetallicButton {...args}>
-            <AntIcons.AiFillStar /> {children}
+            <CircumIcons.CiFaceSmile /> {children}
         </SMetallicButton>
     ),
     args: {
-        children: 'Click Me',
         shouldShine: true,
         width: 200,
         height: 60,
         shineSpeed: 1,
         iconSize: 24,
         shineColor: 'rgba(255, 255, 255, 0.5)',
-        iconColor: '#ffffff',
+        iconColor: 'black',
     },
 };
 
 const iconSeries = [
+    { name: 'Font Awesome Icons', icons: FontAwesomeIcons, count: Object.keys(FontAwesomeIcons).length },
+    { name: 'Font Awesome 6 Icons', icons: FontAwesome6Icons, count: Object.keys(FontAwesome6Icons).length },
     { name: 'Ant Design Icons', icons: AntIcons, count: Object.keys(AntIcons).length },
     { name: 'Bootstrap Icons', icons: BootstrapIcons, count: Object.keys(BootstrapIcons).length },
     { name: 'BoxIcons', icons: BoxIcons, count: Object.keys(BoxIcons).length },
