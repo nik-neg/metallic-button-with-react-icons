@@ -1,4 +1,5 @@
 import { keyframes, css } from 'styled-components';
+import { MetallicProps } from '../Button';
 import {
     HORIZONTAL_COEFFICIENT,
     MIN_WIDTH,
@@ -7,15 +8,6 @@ import {
     BASE_COEFFICIENT,
     HORIZONTAL_OFFSET,
 } from '../Button';
-
-export interface MetallicProps {
-    shouldShine?: boolean;
-    width?: number;
-    height?: number;
-    shineColor?: string;
-    shineSpeed?: number;
-    shineDirection?: 'horizontal' | 'vertical';
-}
 
 const createHorizontalSlideKeyframes = (width: number = 100) => keyframes`
     0% {
