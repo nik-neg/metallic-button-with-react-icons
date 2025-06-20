@@ -129,6 +129,8 @@ export const SSeriesTitle = styled.h3`
     color: white;
     border-bottom: 1px solid #666;
     padding-bottom: 0.5rem;
+    position: sticky;
+    background-color: black;
     z-index: 1;
 `;
 
