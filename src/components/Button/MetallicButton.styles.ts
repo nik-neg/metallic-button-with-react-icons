@@ -28,13 +28,13 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
     gap: 8px;
     padding: 8px 16px;
     transition: transform 0.2s ease;
-    ${({ shouldShine, width, shineColor, shineSpeed, shineDirection }) =>
+    ${({ $shouldShine, width, $shineColor, $shineSpeed, $shineDirection }) =>
         getMetallicStyles({
-            shouldShine,
+            $shouldShine,
             width: width ?? MIN_WIDTH,
-            shineColor,
-            shineSpeed,
-            shineDirection,
+            $shineColor,
+            $shineSpeed,
+            $shineDirection,
         })}
 
     svg {

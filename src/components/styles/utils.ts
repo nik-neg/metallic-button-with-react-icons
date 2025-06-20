@@ -47,11 +47,11 @@ export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
 
 export const shineEffect = ({
     width,
-    shineColor = 'rgba(255, 255, 255, 0.8)',
-    shineSpeed = BASE_DURATION_SHINE,
-    shineDirection = 'horizontal',
+    $shineColor = 'rgba(255, 255, 255, 0.8)',
+    $shineSpeed = BASE_DURATION_SHINE,
+    $shineDirection = 'horizontal',
 }: MetallicProps) => {
-    const isVertical = shineDirection === 'vertical';
+    const isVertical = $shineDirection === 'vertical';
 
     const animation = isVertical ? createVerticalSlideKeyframes() : createHorizontalSlideKeyframes(width);
 
@@ -67,11 +67,11 @@ export const shineEffect = ({
                 height: ${isVertical ? '50%' : '100%'};
                 position: absolute;
                 z-index: 1;
-                animation: ${animation} ${shineSpeed}s ease-in-out infinite alternate;
+                animation: ${animation} ${$shineSpeed}s ease-in-out infinite alternate;
                 background: linear-gradient(
                     ${gradientDirection},
                     rgba(255, 255, 255, 0) 0%,
-                    ${shineColor} 50%,
+                    ${$shineColor} 50%,
                     rgba(128, 186, 232, 0) 99%,
                     rgba(125, 185, 232, 0) 94%
                 );
@@ -81,13 +81,13 @@ export const shineEffect = ({
 };
 
 export const getMetallicStyles = ({
-    shouldShine = false,
+    $shouldShine = false,
     width,
     height,
-    shineColor,
-    shineSpeed,
-    shineDirection,
+    $shineColor,
+    $shineSpeed,
+    $shineDirection,
 }: MetallicProps = {}) => css`
-    ${getMetallicBase({ $isVertical: shineDirection === 'vertical' })}
-    ${shouldShine ? shineEffect({ width, height, shineColor, shineSpeed, shineDirection }) : ''}
+    ${getMetallicBase({ $isVertical: $shineDirection === 'vertical' })}
+    ${$shouldShine ? shineEffect({ width, height, $shineColor, $shineSpeed, $shineDirection }) : ''}
 `;
