@@ -49,7 +49,6 @@ export const shineEffect = ({
     $shineDuration = BASE_DURATION_SHINE,
     $shineDirection = 'horizontal',
 }: MetallicProps) => {
-    console.log({ $shineDuration });
     const isVertical = $shineDirection === 'vertical';
 
     const isWidthBiggerThanBaseCoefficient = width / MIN_WIDTH > BASE_COEFFICIENT;

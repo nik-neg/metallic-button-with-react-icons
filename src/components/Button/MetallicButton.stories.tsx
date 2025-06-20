@@ -201,8 +201,6 @@ export const ReactIconsSearch: Story = {
                 }));
         }, [selectedSeries, searchMode]);
 
-        console.log({ a: seriesIcons });
-
         return (
             <div
                 style={{
