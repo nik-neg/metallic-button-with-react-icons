@@ -123,12 +123,12 @@ export const SNoResults = styled.div`
 `;
 
 export const SSeriesGroupContainer = styled.div`
-    width: 400px;
+    padding: 1rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    overflow-x: hidden;
 `;
 
 export const SSeriesTitle = styled.h3`
