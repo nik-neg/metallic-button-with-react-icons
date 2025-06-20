@@ -115,7 +115,6 @@ export const SIconGridContainer = styled.div`
     padding: 0 1rem;
     width: 400px;
     height: fit-content;
-    background-color: black;
 `;
 
 export const SNoResults = styled.div`
