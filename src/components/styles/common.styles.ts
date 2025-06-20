@@ -1,5 +1,12 @@
 import { keyframes, css } from 'styled-components';
-import { HORIZONTAL_COEFFICIENT, MIN_WIDTH, BASE_WIDTH_SHINE } from '../Button/constants';
+import {
+    HORIZONTAL_COEFFICIENT,
+    MIN_WIDTH,
+    BASE_WIDTH_SHINE,
+    BASE_DURATION_SHINE,
+    BASE_COEFFICIENT,
+    HORIZONTAL_OFFSET,
+} from '../Button/constants';
 
 export interface MetallicProps {
     shouldShine?: boolean;
@@ -12,7 +19,9 @@ export interface MetallicProps {
 
 const createHorizontalSlideKeyframes = (width: number = 100) => keyframes`
     0% {
-        transform: translateX(-80%);
+        transform: translateX(-${
+            HORIZONTAL_OFFSET * (width / MIN_WIDTH > BASE_COEFFICIENT ? width / MIN_WIDTH : BASE_COEFFICIENT)
+        }%);
     }
     100% {
         transform: translateX(${width + (width / MIN_WIDTH - HORIZONTAL_COEFFICIENT) * MIN_WIDTH}%);
@@ -27,8 +36,6 @@ const createVerticalSlideKeyframes = () => keyframes`
         transform: translateY(200%);
     }
 `;
-
-const BASE_DURATION = 1.4;
 
 const GREY_COLOR_WITH_OPACITY = 'rgba(111, 111, 111, 0.9402135854341737)';
 
@@ -49,7 +56,7 @@ export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
 export const shineEffect = ({
     width,
     shineColor = 'rgba(255, 255, 255, 0.8)',
-    shineSpeed = BASE_DURATION,
+    shineSpeed = BASE_DURATION_SHINE,
     shineDirection = 'horizontal',
 }: MetallicProps) => {
     const isVertical = shineDirection === 'vertical';

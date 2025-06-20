@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SMetallicButton } from './MetallicButton.styles';
+import { MIN_WIDTH, MIN_HEIGHT } from './constants';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
 import * as FontAwesome6Icons from 'react-icons/fa6';
@@ -104,13 +105,13 @@ export const Default: Story = {
     ),
     args: {
         shouldShine: true,
-        width: 200,
-        height: 60,
-        shineSpeed: 1,
+        width: MIN_WIDTH,
+        height: MIN_HEIGHT,
+        shineSpeed: 2,
         iconSize: 24,
         shineColor: 'rgba(255, 255, 255, 0.5)',
         iconColor: 'black',
-        shineDirection: 'vertical',
+        shineDirection: 'horizontal',
     },
 };
 
