@@ -53,7 +53,7 @@ export const SStoryContainer = styled.div`
     background: #000000;
     padding: 2rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 469px) {
         padding: 1rem;
     }
 `;
@@ -67,7 +67,7 @@ export const SIconSearchContainer = styled.div`
     align-items: flex-start;
     gap: 2rem;
 
-    @media (max-width: 468px) {
+    @media (max-width: 469px) {
         gap: 1rem;
         width: 400px;
     }
@@ -76,10 +76,10 @@ export const SIconSearchContainer = styled.div`
 export const SControlsContainer = styled.div`
     width: 100%;
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 1rem;
 
-    @media (max-width: 468px) {
+    @media (max-width: 469px) {
         flex-direction: column;
         align-items: center;
         width: 400px;
@@ -94,9 +94,6 @@ export const SSeriesSelect = styled.select`
     background-color: #333;
     color: white;
     border: 1px solid #666;
-
-    @media (max-width: 469px) {
-    }
 `;
 
 export const SSearchInput = styled.input`
@@ -106,15 +103,13 @@ export const SSearchInput = styled.input`
     background-color: #333;
     color: white;
     border: 1px solid #666;
-
-    @media (min-width: 469px) {
-    }
 `;
 
 export const SIconGridContainer = styled.div`
     padding: 0 1rem;
-    width: 400px;
     height: fit-content;
+    width: 100%;
+    background-color: transparent;
 `;
 
 export const SNoResults = styled.div`
@@ -135,13 +130,7 @@ export const SSeriesTitle = styled.h3`
     padding-bottom: 0.5rem;
     position: sticky;
     top: 0;
-    background-color: #000000;
     z-index: 1;
-    margin-top: 2rem;
-
-    &:first-child {
-        margin-top: 0;
-    }
 `;
 
 export const SIconsWrapper = styled.div`
@@ -150,7 +139,7 @@ export const SIconsWrapper = styled.div`
     flex-wrap: wrap;
     height: fit-content;
 
-    @media (max-width: 768px) {
+    @media (max-width: 469px) {
         padding: 0 2rem;
         gap: 0.5rem;
         justify-content: flex-start;
