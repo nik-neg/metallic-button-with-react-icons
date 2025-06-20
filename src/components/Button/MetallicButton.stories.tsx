@@ -90,7 +90,11 @@ export default meta;
 type Story = StoryObj<typeof SMetallicButton>;
 
 export const Default: Story = {
-    render: (args) => <SMetallicButton {...args} />,
+    render: ({ children, ...args }) => (
+        <SMetallicButton {...args}>
+            <AntIcons.AiFillStar /> {children}
+        </SMetallicButton>
+    ),
     args: {
         children: 'Click Me',
         shouldShine: true,

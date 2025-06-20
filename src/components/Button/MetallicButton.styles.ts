@@ -39,6 +39,6 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
     svg {
         width: ${({ iconSize }) => iconSize ?? 24}px;
         height: ${({ iconSize }) => iconSize ?? 24}px;
-        color: ${({ iconColor }) => iconColor ?? 'inherit'};
+        fill: ${({ iconColor }) => iconColor ?? 'inherit'};
     }
 `;
