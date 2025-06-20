@@ -123,7 +123,7 @@ export const SNoResults = styled.div`
 `;
 
 export const SSeriesGroupContainer = styled.div`
-    padding: 1rem;
+    padding: 2rem 0;
     width: 100%;
     display: flex;
     flex-direction: column;
