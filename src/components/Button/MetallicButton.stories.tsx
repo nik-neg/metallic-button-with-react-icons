@@ -121,11 +121,47 @@ export const ReactIconsSearch: Story = {
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
         const [selectedSeries, setSelectedSeries] = useState(iconSeries[0]);
-        const [selectedIcon] = useState('');
 
-        const filteredIcons = Object.keys(selectedSeries.icons)
-            .filter((name) => name.toLowerCase().includes(searchTerm.toLowerCase()))
-            .slice(0, SEARCH_LENGTH_MAX);
+        const searchMode = searchTerm.trim().length >= 2;
+
+        const searchResults = React.useMemo(() => {
+            if (!searchMode) return [];
+
+            const allFoundIcons = [];
+            for (const series of iconSeries) {
+                const foundIcons = Object.entries(series.icons)
+                    .filter(
+                        ([name, icon]) =>
+                            typeof icon === 'function' &&
+                            !name.toLowerCase().startsWith('icon') &&
+                            name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map(([name, component]) => ({
+                        name,
+                        component: component as React.ComponentType<{ size: number }>,
+                    }));
+
+                if (foundIcons.length > 0) {
+                    allFoundIcons.push({
+                        name: series.name,
+                        count: foundIcons.length,
+                        icons: foundIcons.slice(0, SEARCH_LENGTH_MAX),
+                    });
+                }
+            }
+            return allFoundIcons;
+        }, [searchTerm, searchMode]);
+
+        const seriesIcons = React.useMemo(() => {
+            if (searchMode) return [];
+            return Object.entries(selectedSeries.icons)
+                .filter(([name, icon]) => typeof icon === 'function' && !name.toLowerCase().startsWith('icon'))
+                .map(([name, component]) => ({
+                    name,
+                    component: component as React.ComponentType<{ size: number }>,
+                }))
+                .slice(0, SEARCH_LENGTH_MAX);
+        }, [selectedSeries, searchMode]);
 
         return (
             <div
@@ -135,6 +171,7 @@ export const ReactIconsSearch: Story = {
                     gap: '2rem',
                     maxWidth: '1200px',
                     margin: '0 auto',
+                    height: '90vh',
                 }}
             >
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
@@ -163,7 +200,7 @@ export const ReactIconsSearch: Story = {
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        placeholder="Search icons..."
+                        placeholder="Search all icons (min 2 chars)..."
                         style={{
                             padding: '0.5rem',
                             borderRadius: '4px',
@@ -174,21 +211,56 @@ export const ReactIconsSearch: Story = {
                         }}
                     />
                 </div>
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                    {filteredIcons.map((iconName) => {
-                        const Icon = selectedSeries.icons[iconName as keyof typeof selectedSeries.icons];
-                        return (
-                            <SMetallicButton key={iconName} icon={Icon} iconSize={24} shouldShine={true}>
-                                <Icon size={24} />
-                            </SMetallicButton>
-                        );
-                    })}
+                <div style={{ overflowY: 'auto' }}>
+                    {searchMode ? (
+                        <>
+                            {searchResults.length === 0 && (
+                                <div style={{ color: 'white', textAlign: 'center' }}>
+                                    No icons found for "{searchTerm}".
+                                </div>
+                            )}
+                            {searchResults.map((series) => (
+                                <div key={series.name} style={{ marginBottom: '2rem' }}>
+                                    <h3
+                                        style={{
+                                            color: 'white',
+                                            borderBottom: '1px solid #666',
+                                            paddingBottom: '0.5rem',
+                                            position: 'sticky',
+                                            top: 0,
+                                            backgroundColor: '#000000',
+                                            zIndex: 1,
+                                        }}
+                                    >
+                                        {series.name} ({series.count} found)
+                                    </h3>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            gap: '1rem',
+                                            flexWrap: 'wrap',
+                                            marginTop: '1rem',
+                                        }}
+                                    >
+                                        {series.icons.map(({ name, component: Icon }) => (
+                                            <SMetallicButton key={name} icon={Icon} iconSize={24} shouldShine={true}>
+                                                <Icon size={24} />
+                                            </SMetallicButton>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </>
+                    ) : (
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            {seriesIcons.map(({ name, component: Icon }) => (
+                                <SMetallicButton key={name} icon={Icon} iconSize={24} shouldShine={true}>
+                                    <Icon size={24} />
+                                </SMetallicButton>
+                            ))}
+                        </div>
+                    )}
                 </div>
-                {selectedIcon && (
-                    <div style={{ textAlign: 'center', color: 'white' }}>
-                        Selected Icon: {selectedIcon} from {selectedSeries.name}
-                    </div>
-                )}
             </div>
         );
     },
