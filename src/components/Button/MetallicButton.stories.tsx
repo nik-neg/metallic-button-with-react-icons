@@ -60,15 +60,15 @@ const meta: Meta<typeof SMetallicButton> = {
             control: 'number',
             description: 'Height of the button',
         },
-        shouldShine: {
+        $shouldShine: {
             control: 'boolean',
             description: 'Whether the button should have the shine effect on hover',
         },
-        shineColor: {
+        $shineColor: {
             control: 'color',
             description: 'Color of the shine effect',
         },
-        shineSpeed: {
+        $shineSpeed: {
             control: { type: 'range', min: 0.5, max: 3, step: 0.1 },
             description: 'Speed of the shine animation in seconds',
         },
@@ -76,16 +76,16 @@ const meta: Meta<typeof SMetallicButton> = {
             control: 'text',
             description: 'Button content',
         },
-        iconSize: {
+        $iconSize: {
             control: 'number',
             description: 'Size of the icon in pixels',
         },
-        iconColor: {
+        $iconColor: {
             control: 'color',
             description: 'Color of the icon',
         },
         onClick: { action: 'clicked' },
-        shineDirection: {
+        $shineDirection: {
             control: 'select',
             options: ['horizontal', 'vertical'],
             description: 'Direction of the shine effect',
@@ -106,10 +106,10 @@ export const Default: Story = {
         $shouldShine: true,
         width: MIN_WIDTH,
         height: MIN_HEIGHT,
-        shineSpeed: 2,
-        iconSize: 24,
+        $shineSpeed: 2,
+        $iconSize: 24,
         $shineColor: 'rgba(255, 255, 255, 0.5)',
-        iconColor: 'black',
+        $iconColor: 'black',
         $shineDirection: 'horizontal',
     },
 };
