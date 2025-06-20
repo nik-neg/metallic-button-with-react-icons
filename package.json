@@ -1,7 +1,7 @@
 {
-    "name": "metallic-button",
+    "name": "metallic-button-with-react-icons",
     "version": "1.0.0",
-    "description": "A metallic button component with shine effect",
+    "description": "A metallic button component with shine effect and react-icons storybook",
     "main": "index.js",
     "scripts": {
         "build": "npm run lint && rm -rf dist && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
@@ -25,9 +25,9 @@
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/nik-neg/metallic-button/issues"
+        "url": "https://github.com/nik-neg/metallic-button-with-react-icons/issues"
     },
-    "homepage": "https://github.com/nik-neg/metallic-button#readme",
+    "homepage": "https://github.com/nik-neg/metallic-button-with-react-icons#readme",
     "dependencies": {
         "@storybook/experimental-addon-test": "^8.6.14",
         "react": "^18.2.0",
