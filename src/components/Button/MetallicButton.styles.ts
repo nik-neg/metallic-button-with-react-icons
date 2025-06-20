@@ -131,7 +131,7 @@ export const SSeriesTitle = styled.h3`
     padding-bottom: 0.5rem;
     position: sticky;
     background-color: black;
-    z-index: 1;
+    z-index: 2;
 `;
 
 export const SIconsWrapper = styled.div`
