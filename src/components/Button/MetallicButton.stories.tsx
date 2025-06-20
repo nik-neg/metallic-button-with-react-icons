@@ -152,15 +152,23 @@ export const ReactIconsSearch: Story = {
     },
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
-        const [selectedSeries, setSelectedSeries] = useState(iconSeries[0]);
+
+        const allIconSeries = React.useMemo(() => {
+            const totalIcons = iconSeries.reduce((acc, series) => acc + series.count, 0);
+            return [{ name: 'All Icons', icons: {}, count: totalIcons }, ...iconSeries];
+        }, []);
+
+        const [selectedSeries, setSelectedSeries] = useState(allIconSeries[0]);
 
         const searchMode = searchTerm.trim().length >= 2;
 
         const searchResults = React.useMemo(() => {
             if (!searchMode) return [];
 
+            const seriesToSearch = selectedSeries.name === 'All Icons' ? iconSeries : [selectedSeries];
+
             const allFoundIcons = [];
-            for (const series of iconSeries) {
+            for (const series of seriesToSearch) {
                 const foundIcons = Object.entries(series.icons)
                     .filter(
                         ([name, icon]) =>
@@ -182,10 +190,10 @@ export const ReactIconsSearch: Story = {
                 }
             }
             return allFoundIcons;
-        }, [searchTerm, searchMode]);
+        }, [searchTerm, searchMode, selectedSeries]);
 
         const seriesIcons = React.useMemo(() => {
-            if (searchMode) return [];
+            if (searchMode || selectedSeries.name === 'All Icons') return [];
             return Object.entries(selectedSeries.icons)
                 .filter(([name, icon]) => typeof icon === 'function' && !name.toLowerCase().startsWith('icon'))
                 .map(([name, component]) => ({
@@ -210,7 +218,7 @@ export const ReactIconsSearch: Story = {
                     <select
                         value={selectedSeries.name}
                         onChange={(e) => {
-                            const series = iconSeries.find((s) => s.name === e.target.value);
+                            const series = allIconSeries.find((s) => s.name === e.target.value);
                             if (series) setSelectedSeries(series);
                         }}
                         style={{
@@ -222,7 +230,7 @@ export const ReactIconsSearch: Story = {
                             minWidth: '200px',
                         }}
                     >
-                        {iconSeries.map((series) => (
+                        {allIconSeries.map((series) => (
                             <option key={series.name} value={series.name}>
                                 {series.name} ({series.count} icons)
                             </option>
@@ -232,7 +240,7 @@ export const ReactIconsSearch: Story = {
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        placeholder="Search all icons (min 2 chars)..."
+                        placeholder={`Search in ${selectedSeries.name} (min 2 chars)...`}
                         style={{
                             padding: '0.5rem',
                             borderRadius: '4px',
