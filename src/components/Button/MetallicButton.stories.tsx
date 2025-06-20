@@ -218,6 +218,7 @@ export const ReactIconsSearch: Story = {
                         display: 'flex',
                         gap: '1rem',
                         alignItems: 'flex-start',
+                        maxWidth: '100%',
                     }}
                 >
                     <select
