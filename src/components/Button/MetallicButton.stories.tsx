@@ -243,7 +243,7 @@ export const ReactIconsSearch: Story = {
                         }}
                     />
                 </div>
-                <div style={{ overflowY: 'auto' }}>
+                <div style={{ overflowY: 'auto', height: '100%' }}>
                     {searchMode ? (
                         <>
                             {searchResults.length === 0 && (
@@ -252,7 +252,7 @@ export const ReactIconsSearch: Story = {
                                 </div>
                             )}
                             {searchResults.map((series) => (
-                                <div key={series.name} style={{ marginBottom: '2rem' }}>
+                                <div key={series.name}>
                                     <h3
                                         style={{
                                             color: 'white',
