@@ -43,3 +43,109 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
         fill: ${({ $iconColor }) => $iconColor ?? 'inherit'};
     }
 `;
+
+export const SStoryContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #000000;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+`;
+
+export const SIconSearchContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+
+    @media (max-width: 768px) {
+        gap: 1rem;
+    }
+`;
+
+export const SControlsContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    max-width: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+`;
+
+export const SSeriesSelect = styled.select`
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+    max-width: 300px;
+    width: 100%;
+
+    @media (min-width: 769px) {
+        width: auto;
+    }
+`;
+
+export const SSearchInput = styled.input`
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #666;
+    width: 100%;
+
+    @media (min-width: 769px) {
+        width: auto;
+    }
+`;
+
+export const SIconGridContainer = styled.div`
+    height: fit-content;
+    background-color: black;
+    width: 100%;
+`;
+
+export const SNoResults = styled.div`
+    color: white;
+    text-align: center;
+`;
+
+export const SSeriesTitle = styled.h3`
+    color: white;
+    border-bottom: 1px solid #666;
+    padding-bottom: 0.5rem;
+    position: sticky;
+    top: 0;
+    background-color: #000000;
+    z-index: 1;
+    margin-top: 2rem;
+
+    &:first-child {
+        margin-top: 0;
+    }
+`;
+
+export const SIconsWrapper = styled.div`
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    height: fit-content;
+
+    @media (max-width: 768px) {
+        gap: 0.5rem;
+        justify-content: center;
+    }
+`;

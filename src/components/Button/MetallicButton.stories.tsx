@@ -1,6 +1,19 @@
 import React, { useState, useMemo, ComponentType } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SMetallicButton, MIN_WIDTH, MIN_HEIGHT } from './index';
+import {
+    SMetallicButton,
+    MIN_WIDTH,
+    MIN_HEIGHT,
+    SStoryContainer,
+    SIconSearchContainer,
+    SControlsContainer,
+    SSeriesSelect,
+    SSearchInput,
+    SIconGridContainer,
+    SNoResults,
+    SSeriesTitle,
+    SIconsWrapper,
+} from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
 import * as FontAwesome6Icons from 'react-icons/fa6';
@@ -35,19 +48,9 @@ const meta: Meta<typeof SMetallicButton> = {
     title: 'Components/MetallicButton',
     decorators: [
         (Story) => (
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    minHeight: '100vh',
-                    width: '100%',
-                    background: '#000000',
-                    padding: '2rem',
-                }}
-            >
+            <SStoryContainer>
                 <Story />
-            </div>
+            </SStoryContainer>
         ),
     ],
     argTypes: {
@@ -202,38 +205,13 @@ export const ReactIconsSearch: Story = {
         }, [selectedSeries, searchMode]);
 
         return (
-            <div
-                style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
-                    gap: '2rem',
-                    maxWidth: '100vw',
-                    minHeight: '100vh',
-                    height: 'fit-content',
-                }}
-            >
-                <div
-                    style={{
-                        display: 'flex',
-                        gap: '1rem',
-                        alignItems: 'flex-start',
-                        maxWidth: '100%',
-                    }}
-                >
-                    <select
+            <SIconSearchContainer>
+                <SControlsContainer>
+                    <SSeriesSelect
                         value={selectedSeries.name}
                         onChange={(e) => {
                             const series = allIconSeries.find((s) => s.name === e.target.value);
                             if (series) setSelectedSeries(series);
-                        }}
-                        style={{
-                            padding: '0.5rem',
-                            borderRadius: '4px',
-                            backgroundColor: '#333',
-                            color: 'white',
-                            border: '1px solid #666',
-                            minWidth: '200px',
                         }}
                     >
                         {allIconSeries.map((series) => (
@@ -241,84 +219,44 @@ export const ReactIconsSearch: Story = {
                                 {series.name} ({series.count} icons)
                             </option>
                         ))}
-                    </select>
-                    <input
+                    </SSeriesSelect>
+                    <SSearchInput
                         type="text"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder={`Search in ${selectedSeries.name} (min 2 chars)...`}
-                        style={{
-                            padding: '0.5rem',
-                            borderRadius: '4px',
-                            backgroundColor: '#333',
-                            color: 'white',
-                            border: '1px solid #666',
-                            flex: 1,
-                        }}
                     />
-                </div>
-                <div
-                    style={{
-                        height: 'fit-content',
-                        backgroundColor: 'black',
-                    }}
-                >
+                </SControlsContainer>
+                <SIconGridContainer>
                     {searchMode ? (
                         <>
-                            {searchResults.length === 0 && (
-                                <div style={{ color: 'white', textAlign: 'center' }}>
-                                    No icons found for "{searchTerm}".
-                                </div>
-                            )}
+                            {searchResults.length === 0 && <SNoResults>No icons found for "{searchTerm}".</SNoResults>}
                             {searchResults.map((series) => (
                                 <div key={series.name}>
-                                    <h3
-                                        style={{
-                                            color: 'white',
-                                            borderBottom: '1px solid #666',
-                                            paddingBottom: '0.5rem',
-                                            position: 'sticky',
-                                            top: 0,
-                                            backgroundColor: '#000000',
-                                            zIndex: 1,
-                                        }}
-                                    >
+                                    <SSeriesTitle>
                                         {series.name} ({series.count} found)
-                                    </h3>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            gap: '1rem',
-                                            flexWrap: 'wrap',
-                                        }}
-                                    >
+                                    </SSeriesTitle>
+                                    <SIconsWrapper>
                                         {series.icons.map(({ name, component: Icon }) => (
                                             <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
                                                 <Icon size={24} />
                                             </SMetallicButton>
                                         ))}
-                                    </div>
+                                    </SIconsWrapper>
                                 </div>
                             ))}
                         </>
                     ) : (
-                        <div
-                            style={{
-                                display: 'flex',
-                                gap: '1rem',
-                                flexWrap: 'wrap',
-                                height: 'fit-content',
-                            }}
-                        >
+                        <SIconsWrapper>
                             {seriesIcons.map(({ name, component: Icon }) => (
                                 <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
                                     <Icon size={24} />
                                 </SMetallicButton>
                             ))}
-                        </div>
+                        </SIconsWrapper>
                     )}
-                </div>
-            </div>
+                </SIconGridContainer>
+            </SIconSearchContainer>
         );
     },
 };
