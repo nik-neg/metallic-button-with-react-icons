@@ -14,6 +14,7 @@ import {
     SSeriesTitle,
     SIconsWrapper,
     SSeriesGroupContainer,
+    SCopiedMessage,
 } from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
@@ -147,10 +148,6 @@ const iconSeries = [
     { name: 'Weather Icons', icons: WeatherIcons, count: Object.keys(WeatherIcons).length },
 ];
 
-const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-};
-
 export const ReactIconsSearch: Story = {
     parameters: {
         controls: {
@@ -159,6 +156,13 @@ export const ReactIconsSearch: Story = {
     },
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
+        const [copied, setCopied] = useState(false);
+
+        const handleCopy = (name: string) => {
+            navigator.clipboard.writeText(name);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        };
 
         const allIconSeries = useMemo(() => {
             const totalIcons = iconSeries.reduce((acc, series) => acc + series.count, 0);
@@ -231,6 +235,7 @@ export const ReactIconsSearch: Story = {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         placeholder={`Search in ${selectedSeries.name} (min 2 chars)...`}
                     />
+                    <SCopiedMessage className={copied ? 'visible' : ''}>Copied!</SCopiedMessage>
                 </SControlsContainer>
                 <SIconGridContainer>
                     {searchMode ? (
@@ -247,7 +252,7 @@ export const ReactIconsSearch: Story = {
                                                 key={name}
                                                 $iconSize={24}
                                                 $shouldShine={true}
-                                                onClick={() => copyToClipboard(name)}
+                                                onClick={() => handleCopy(name)}
                                             >
                                                 <Icon size={24} />
                                             </SMetallicButton>
@@ -263,7 +268,7 @@ export const ReactIconsSearch: Story = {
                                     key={name}
                                     $iconSize={24}
                                     $shouldShine={true}
-                                    onClick={() => copyToClipboard(name)}
+                                    onClick={() => handleCopy(name)}
                                 >
                                     <Icon size={24} />
                                 </SMetallicButton>

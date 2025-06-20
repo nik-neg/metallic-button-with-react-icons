@@ -105,6 +105,17 @@ export const SSearchInput = styled.input`
     border: 1px solid #666;
 `;
 
+export const SCopiedMessage = styled.span`
+    color: #4caf50;
+    font-weight: bold;
+    margin-left: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    &.visible {
+        opacity: 1;
+    }
+`;
+
 export const SIconGridContainer = styled.div`
     padding: 0 1rem;
     height: fit-content;
