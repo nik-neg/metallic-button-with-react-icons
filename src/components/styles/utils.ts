@@ -49,6 +49,7 @@ export const shineEffect = ({
     $shineDuration = BASE_DURATION_SHINE,
     $shineDirection = 'horizontal',
 }: MetallicProps) => {
+    console.log({ $shineDuration });
     const isVertical = $shineDirection === 'vertical';
 
     const isWidthBiggerThanBaseCoefficient = width / MIN_WIDTH > BASE_COEFFICIENT;
@@ -61,7 +62,7 @@ export const shineEffect = ({
 
     const gradientDirection = isVertical ? 'to bottom' : 'to right';
 
-    const dynamicShineDuration = $shineDuration ?? isVertical ? BASE_DURATION_SHINE_VERTICAL : BASE_DURATION_SHINE;
+    const dynamicShineDuration = $shineDuration ?? (isVertical ? BASE_DURATION_SHINE_VERTICAL : BASE_DURATION_SHINE);
 
     return css`
         &:hover {
