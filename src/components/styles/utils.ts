@@ -6,7 +6,7 @@ import {
     BASE_DURATION_SHINE,
     BASE_COEFFICIENT,
     HORIZONTAL_OFFSET,
-} from '../Button/constants';
+} from '../Button';
 
 export interface MetallicProps {
     shouldShine?: boolean;

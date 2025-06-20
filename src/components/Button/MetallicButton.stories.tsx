@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { SMetallicButton } from './MetallicButton.styles';
-import { MIN_WIDTH, MIN_HEIGHT } from './constants';
+import { SMetallicButton, MIN_WIDTH, MIN_HEIGHT } from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
 import * as FontAwesome6Icons from 'react-icons/fa6';

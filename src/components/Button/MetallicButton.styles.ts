@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getMetallicStyles, MetallicProps } from '../styles/common.styles';
+import { getMetallicStyles, MetallicProps } from '../styles/utils';
 import { IconType } from 'react-icons';
 import { MIN_WIDTH, MIN_HEIGHT } from './constants';
 
