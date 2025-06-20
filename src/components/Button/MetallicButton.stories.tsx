@@ -208,7 +208,7 @@ export const ReactIconsSearch: Story = {
                     flexDirection: 'column',
                     alignItems: 'flex-start',
                     gap: '2rem',
-                    maxWidth: '1200px',
+                    maxWidth: '100vw',
                     minHeight: '100vh',
                     height: 'fit-content',
                 }}
