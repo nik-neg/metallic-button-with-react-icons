@@ -13,6 +13,7 @@ import {
     SNoResults,
     SSeriesTitle,
     SIconsWrapper,
+    SSeriesGroupContainer,
 } from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
@@ -232,7 +233,7 @@ export const ReactIconsSearch: Story = {
                         <>
                             {searchResults.length === 0 && <SNoResults>No icons found for "{searchTerm}".</SNoResults>}
                             {searchResults.map((series) => (
-                                <div key={series.name}>
+                                <SSeriesGroupContainer key={series.name}>
                                     <SSeriesTitle>
                                         {series.name} ({series.count} found)
                                     </SSeriesTitle>
@@ -243,7 +244,7 @@ export const ReactIconsSearch: Story = {
                                             </SMetallicButton>
                                         ))}
                                     </SIconsWrapper>
-                                </div>
+                                </SSeriesGroupContainer>
                             ))}
                         </>
                     ) : (

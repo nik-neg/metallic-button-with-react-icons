@@ -123,6 +123,8 @@ export const SNoResults = styled.div`
     text-align: center;
 `;
 
+export const SSeriesGroupContainer = styled.div``;
+
 export const SSeriesTitle = styled.h3`
     color: white;
     border-bottom: 1px solid #666;
