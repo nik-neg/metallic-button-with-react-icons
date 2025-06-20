@@ -147,6 +147,10 @@ const iconSeries = [
     { name: 'Weather Icons', icons: WeatherIcons, count: Object.keys(WeatherIcons).length },
 ];
 
+const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+};
+
 export const ReactIconsSearch: Story = {
     parameters: {
         controls: {
@@ -239,7 +243,12 @@ export const ReactIconsSearch: Story = {
                                     </SSeriesTitle>
                                     <SIconsWrapper>
                                         {series.icons.map(({ name, component: Icon }) => (
-                                            <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
+                                            <SMetallicButton
+                                                key={name}
+                                                $iconSize={24}
+                                                $shouldShine={true}
+                                                onClick={() => copyToClipboard(name)}
+                                            >
                                                 <Icon size={24} />
                                             </SMetallicButton>
                                         ))}
@@ -250,7 +259,12 @@ export const ReactIconsSearch: Story = {
                     ) : (
                         <SIconsWrapper>
                             {seriesIcons.map(({ name, component: Icon }) => (
-                                <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
+                                <SMetallicButton
+                                    key={name}
+                                    $iconSize={24}
+                                    $shouldShine={true}
+                                    onClick={() => copyToClipboard(name)}
+                                >
                                     <Icon size={24} />
                                 </SMetallicButton>
                             ))}
