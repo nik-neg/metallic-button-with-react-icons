@@ -51,11 +51,11 @@ const meta: Meta<typeof SMetallicButton> = {
     ],
     argTypes: {
         width: {
-            control: 'text',
+            control: 'number',
             description: 'Width of the button',
         },
         height: {
-            control: 'text',
+            control: 'number',
             description: 'Height of the button',
         },
         shouldShine: {
@@ -89,6 +89,20 @@ const meta: Meta<typeof SMetallicButton> = {
 export default meta;
 type Story = StoryObj<typeof SMetallicButton>;
 
+export const Default: Story = {
+    render: (args) => <SMetallicButton {...args} />,
+    args: {
+        children: 'Click Me',
+        shouldShine: true,
+        width: 200,
+        height: 60,
+        shineSpeed: 1,
+        iconSize: 24,
+        shineColor: 'rgba(255, 255, 255, 0.5)',
+        iconColor: '#ffffff',
+    },
+};
+
 const iconSeries = [
     { name: 'Ant Design Icons', icons: AntIcons, count: Object.keys(AntIcons).length },
     { name: 'Bootstrap Icons', icons: BootstrapIcons, count: Object.keys(BootstrapIcons).length },
@@ -118,6 +132,11 @@ const iconSeries = [
 ];
 
 export const ReactIconsSearch: Story = {
+    parameters: {
+        controls: {
+            disable: true,
+        },
+    },
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
         const [selectedSeries, setSelectedSeries] = useState(iconSeries[0]);
@@ -243,7 +262,7 @@ export const ReactIconsSearch: Story = {
                                         }}
                                     >
                                         {series.icons.map(({ name, component: Icon }) => (
-                                            <SMetallicButton key={name} icon={Icon} iconSize={24} shouldShine={true}>
+                                            <SMetallicButton key={name} iconSize={24} shouldShine={true}>
                                                 <Icon size={24} />
                                             </SMetallicButton>
                                         ))}
@@ -254,7 +273,7 @@ export const ReactIconsSearch: Story = {
                     ) : (
                         <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             {seriesIcons.map(({ name, component: Icon }) => (
-                                <SMetallicButton key={name} icon={Icon} iconSize={24} shouldShine={true}>
+                                <SMetallicButton key={name} iconSize={24} shouldShine={true}>
                                     <Icon size={24} />
                                 </SMetallicButton>
                             ))}
