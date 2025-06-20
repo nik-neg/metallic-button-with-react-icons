@@ -1,5 +1,5 @@
 import { keyframes, css } from 'styled-components';
-import { MetallicProps } from '../Button';
+import { BASE_DURATION_SHINE_VERTICAL, MetallicProps } from '../Button';
 import {
     HORIZONTAL_COEFFICIENT,
     MIN_WIDTH,
@@ -35,7 +35,7 @@ interface MetallicBaseProps {
 
 export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
     background: ${$isVertical
-        ? GREY_COLOR_WITH_OPACITY
+        ? `linear-gradient(180deg, rgba(240, 240, 240, 1) 0%, rgba(111, 111, 111, 1) 35%, ${GREY_COLOR_WITH_OPACITY} 52%, ${GREY_COLOR_WITH_OPACITY} 94%)`
         : `linear-gradient(90deg, rgba(240, 240, 240, 1) 0%, rgba(111, 111, 111, 1) 35%, ${GREY_COLOR_WITH_OPACITY} 52%, ${GREY_COLOR_WITH_OPACITY} 94%)`};
 
     border: 3px solid rgba(111, 111, 111, 1);
@@ -46,7 +46,7 @@ export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
 export const shineEffect = ({
     width = MIN_WIDTH,
     $shineColor = 'rgba(255, 255, 255, 0.8)',
-    $shineSpeed = BASE_DURATION_SHINE,
+    $shineDuration = BASE_DURATION_SHINE,
     $shineDirection = 'horizontal',
 }: MetallicProps) => {
     const isVertical = $shineDirection === 'vertical';
@@ -61,6 +61,8 @@ export const shineEffect = ({
 
     const gradientDirection = isVertical ? 'to bottom' : 'to right';
 
+    const dynamicShineDuration = $shineDuration ?? isVertical ? BASE_DURATION_SHINE_VERTICAL : BASE_DURATION_SHINE;
+
     return css`
         &:hover {
             &:after {
@@ -71,7 +73,7 @@ export const shineEffect = ({
                 height: ${isVertical ? '50%' : '100%'};
                 position: absolute;
                 z-index: 1;
-                animation: ${animation} ${$shineSpeed}s ease-in-out infinite alternate;
+                animation: ${animation} ${dynamicShineDuration}s ease-in-out infinite alternate;
                 background: linear-gradient(
                     ${gradientDirection},
                     rgba(255, 255, 255, 0) 0%,
@@ -89,9 +91,9 @@ export const getMetallicStyles = ({
     width,
     height,
     $shineColor,
-    $shineSpeed,
+    $shineDuration,
     $shineDirection,
 }: MetallicProps = {}) => css`
     ${getMetallicBase({ $isVertical: $shineDirection === 'vertical' })}
-    ${$shouldShine ? shineEffect({ width, height, $shineColor, $shineSpeed, $shineDirection }) : ''}
+    ${$shouldShine ? shineEffect({ width, height, $shineColor, $shineDuration, $shineDirection }) : ''}
 `;

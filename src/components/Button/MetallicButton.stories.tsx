@@ -68,7 +68,7 @@ const meta: Meta<typeof SMetallicButton> = {
             control: 'color',
             description: 'Color of the shine effect',
         },
-        $shineSpeed: {
+        $shineDuration: {
             control: { type: 'range', min: 0.5, max: 3, step: 0.1 },
             description: 'Speed of the shine animation in seconds',
         },
@@ -106,7 +106,7 @@ export const Default: Story = {
         $shouldShine: true,
         width: MIN_WIDTH,
         height: MIN_HEIGHT,
-        $shineSpeed: 2,
+        $shineDuration: 2,
         $iconSize: 24,
         $shineColor: 'rgba(255, 255, 255, 0.5)',
         $iconColor: 'black',

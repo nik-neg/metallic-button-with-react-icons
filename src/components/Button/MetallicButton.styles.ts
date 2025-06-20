@@ -11,7 +11,7 @@ interface SMetallicButtonProps extends MetallicProps {
     $iconSize?: number;
     $iconColor?: string;
     $shineColor?: string;
-    $shineSpeed?: number;
+    $shineDuration?: number;
     $shineDirection?: 'horizontal' | 'vertical';
 }
 
@@ -28,12 +28,12 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
     gap: 8px;
     padding: 8px 16px;
     transition: transform 0.2s ease;
-    ${({ $shouldShine, width, $shineColor, $shineSpeed, $shineDirection }) =>
+    ${({ $shouldShine, width, $shineColor, $shineDuration, $shineDirection }) =>
         getMetallicStyles({
             $shouldShine,
             width: width ?? MIN_WIDTH,
             $shineColor,
-            $shineSpeed,
+            $shineDuration,
             $shineDirection,
         })}
 

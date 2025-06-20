@@ -3,6 +3,6 @@ export interface MetallicProps {
     height?: number;
     $shouldShine?: boolean;
     $shineColor?: string;
-    $shineSpeed?: number;
+    $shineDuration?: number;
     $shineDirection?: 'horizontal' | 'vertical';
 }
