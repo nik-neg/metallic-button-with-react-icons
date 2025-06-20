@@ -42,7 +42,6 @@ export const shineEffect = ({
         &:after {
             content: '';
             top: 0;
-            transform: translateX(-200%);
             width: 50px;
             height: 100%;
             position: absolute;
@@ -55,12 +54,6 @@ export const shineEffect = ({
                 rgba(128, 186, 232, 0) 99%,
                 rgba(125, 185, 232, 0) 94%
             );
-        }
-    }
-
-    @keyframes changeBackground {
-        to {
-            background: rgb(225, 225, 225, 0.9);
         }
     }
 `;

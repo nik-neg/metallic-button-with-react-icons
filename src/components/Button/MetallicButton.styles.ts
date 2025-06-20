@@ -36,15 +36,6 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
             shineSpeed,
         })}
 
-    &:hover {
-        transform: scale(2);
-        z-index: 100;
-    }
-
-    &:active {
-        transform: scale(0.95);
-    }
-
     svg {
         width: ${({ iconSize }) => iconSize ?? 24}px;
         height: ${({ iconSize }) => iconSize ?? 24}px;

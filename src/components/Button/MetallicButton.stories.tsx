@@ -240,7 +240,6 @@ export const ReactIconsSearch: Story = {
                                             gap: '1rem',
                                             flexWrap: 'wrap',
                                             marginTop: '1rem',
-                                            padding: '4rem',
                                         }}
                                     >
                                         {series.icons.map(({ name, component: Icon }) => (
@@ -253,7 +252,7 @@ export const ReactIconsSearch: Story = {
                             ))}
                         </>
                     ) : (
-                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', padding: '4rem' }}>
+                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                             {seriesIcons.map(({ name, component: Icon }) => (
                                 <SMetallicButton key={name} icon={Icon} iconSize={24} shouldShine={true}>
                                     <Icon size={24} />
