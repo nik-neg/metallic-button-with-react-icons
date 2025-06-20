@@ -112,7 +112,7 @@ export const SSearchInput = styled.input`
 `;
 
 export const SIconGridContainer = styled.div`
-    width: 100%;
+    width: 400px;
     height: fit-content;
     background-color: black;
 `;
