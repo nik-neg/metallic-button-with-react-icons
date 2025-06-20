@@ -37,7 +37,7 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
         })}
 
     &:hover {
-        transform: scale(1.5);
+        transform: scale(2);
         z-index: 100;
     }
 
