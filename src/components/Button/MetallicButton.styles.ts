@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { getMetallicStyles, MetallicProps } from '../styles/common.styles';
 import { IconType } from 'react-icons';
+import { MIN_WIDTH, MIN_HEIGHT } from './constants';
 
 interface SMetallicButtonProps extends MetallicProps {
     width?: number;
@@ -10,10 +11,8 @@ interface SMetallicButtonProps extends MetallicProps {
     iconColor?: string;
     shineColor?: string;
     shineSpeed?: number;
+    shineDirection?: 'horizontal' | 'vertical';
 }
-
-const MIN_WIDTH = 100;
-const MIN_HEIGHT = 48;
 
 export const SMetallicButton = styled.button<SMetallicButtonProps>`
     width: ${({ width }) => `${width ?? MIN_WIDTH}px`};
@@ -28,12 +27,13 @@ export const SMetallicButton = styled.button<SMetallicButtonProps>`
     gap: 8px;
     padding: 8px 16px;
     transition: transform 0.2s ease;
-    ${({ shouldShine, width, shineColor, shineSpeed }) =>
+    ${({ shouldShine, width, shineColor, shineSpeed, shineDirection }) =>
         getMetallicStyles({
             shouldShine,
             width: width ?? MIN_WIDTH,
             shineColor,
             shineSpeed,
+            shineDirection,
         })}
 
     svg {

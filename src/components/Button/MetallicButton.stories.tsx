@@ -85,6 +85,11 @@ const meta: Meta<typeof SMetallicButton> = {
             description: 'Color of the icon',
         },
         onClick: { action: 'clicked' },
+        shineDirection: {
+            control: 'select',
+            options: ['horizontal', 'vertical'],
+            description: 'Direction of the shine effect',
+        },
     },
 };
 
@@ -105,6 +110,7 @@ export const Default: Story = {
         iconSize: 24,
         shineColor: 'rgba(255, 255, 255, 0.5)',
         iconColor: 'black',
+        shineDirection: 'vertical',
     },
 };
 
