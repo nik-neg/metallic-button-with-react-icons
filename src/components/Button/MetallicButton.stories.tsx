@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo, ComponentType } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { SMetallicButton, MIN_WIDTH, MIN_HEIGHT } from './index';
 
@@ -29,7 +29,6 @@ import * as TablerIcons from 'react-icons/tb';
 import * as ThemifyIcons from 'react-icons/ti';
 import * as VSCodeIcons from 'react-icons/vsc';
 import * as WeatherIcons from 'react-icons/wi';
-import { SEARCH_LENGTH_MAX } from './constants';
 
 const meta: Meta<typeof SMetallicButton> = {
     component: SMetallicButton,
@@ -153,7 +152,7 @@ export const ReactIconsSearch: Story = {
     render: () => {
         const [searchTerm, setSearchTerm] = useState('');
 
-        const allIconSeries = React.useMemo(() => {
+        const allIconSeries = useMemo(() => {
             const totalIcons = iconSeries.reduce((acc, series) => acc + series.count, 0);
             return [{ name: 'All Icons', icons: {}, count: totalIcons }, ...iconSeries];
         }, []);
@@ -162,7 +161,7 @@ export const ReactIconsSearch: Story = {
 
         const searchMode = searchTerm.trim().length >= 2;
 
-        const searchResults = React.useMemo(() => {
+        const searchResults = useMemo(() => {
             if (!searchMode) return [];
 
             const seriesToSearch = selectedSeries.name === 'All Icons' ? iconSeries : [selectedSeries];
@@ -178,43 +177,51 @@ export const ReactIconsSearch: Story = {
                     )
                     .map(([name, component]) => ({
                         name,
-                        component: component as React.ComponentType<{ size: number }>,
+                        component: component as ComponentType<{ size: number }>,
                     }));
 
                 if (foundIcons.length > 0) {
                     allFoundIcons.push({
                         name: series.name,
                         count: foundIcons.length,
-                        icons: foundIcons.slice(0, SEARCH_LENGTH_MAX),
+                        icons: foundIcons.slice(0),
                     });
                 }
             }
             return allFoundIcons;
         }, [searchTerm, searchMode, selectedSeries]);
 
-        const seriesIcons = React.useMemo(() => {
+        const seriesIcons = useMemo(() => {
             if (searchMode || selectedSeries.name === 'All Icons') return [];
             return Object.entries(selectedSeries.icons)
                 .filter(([name, icon]) => typeof icon === 'function' && !name.toLowerCase().startsWith('icon'))
                 .map(([name, component]) => ({
                     name,
                     component: component as React.ComponentType<{ size: number }>,
-                }))
-                .slice(0, SEARCH_LENGTH_MAX);
+                }));
         }, [selectedSeries, searchMode]);
+
+        console.log({ a: seriesIcons });
 
         return (
             <div
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
+                    alignItems: 'flex-start',
                     gap: '2rem',
                     maxWidth: '1200px',
-                    margin: '0 auto',
-                    height: '90vh',
+                    minHeight: '100vh',
+                    height: 'fit-content',
                 }}
             >
-                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                <div
+                    style={{
+                        display: 'flex',
+                        gap: '1rem',
+                        alignItems: 'flex-start',
+                    }}
+                >
                     <select
                         value={selectedSeries.name}
                         onChange={(e) => {
@@ -251,7 +258,12 @@ export const ReactIconsSearch: Story = {
                         }}
                     />
                 </div>
-                <div style={{ overflowY: 'auto', height: '100%' }}>
+                <div
+                    style={{
+                        height: 'fit-content',
+                        backgroundColor: 'black',
+                    }}
+                >
                     {searchMode ? (
                         <>
                             {searchResults.length === 0 && (
@@ -279,7 +291,6 @@ export const ReactIconsSearch: Story = {
                                             display: 'flex',
                                             gap: '1rem',
                                             flexWrap: 'wrap',
-                                            marginTop: '1rem',
                                         }}
                                     >
                                         {series.icons.map(({ name, component: Icon }) => (
@@ -292,7 +303,14 @@ export const ReactIconsSearch: Story = {
                             ))}
                         </>
                     ) : (
-                        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        <div
+                            style={{
+                                display: 'flex',
+                                gap: '1rem',
+                                flexWrap: 'wrap',
+                                height: 'fit-content',
+                            }}
+                        >
                             {seriesIcons.map(({ name, component: Icon }) => (
                                 <SMetallicButton key={name} $iconSize={24} $shouldShine={true}>
                                     <Icon size={24} />
