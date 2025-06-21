@@ -269,6 +269,5 @@ export const ReactIconsSearch: Story = {
     },
     args: {
         ...Default.args,
-        children: null,
     },
 };
