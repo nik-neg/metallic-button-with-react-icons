@@ -15,6 +15,7 @@ import {
     SIconsWrapper,
     SSeriesGroupContainer,
     SCopiedMessage,
+    SDefaultStoryContainer,
 } from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
@@ -102,9 +103,11 @@ type Story = StoryObj<typeof SMetallicButton>;
 
 export const Default: Story = {
     render: ({ children, ...args }) => (
-        <SMetallicButton {...args}>
-            <CircumIcons.CiFaceSmile /> {children}
-        </SMetallicButton>
+        <SDefaultStoryContainer>
+            <SMetallicButton {...args}>
+                <CircumIcons.CiFaceSmile /> {children}
+            </SMetallicButton>
+        </SDefaultStoryContainer>
     ),
     args: {
         $shouldShine: true,
@@ -149,12 +152,7 @@ const iconSeries = [
 ];
 
 export const ReactIconsSearch: Story = {
-    parameters: {
-        controls: {
-            disable: true,
-        },
-    },
-    render: () => {
+    render: ({ ...args }) => {
         const [searchTerm, setSearchTerm] = useState('');
         const [copied, setCopied] = useState(false);
 
@@ -248,13 +246,8 @@ export const ReactIconsSearch: Story = {
                                     </SSeriesTitle>
                                     <SIconsWrapper>
                                         {series.icons.map(({ name, component: Icon }) => (
-                                            <SMetallicButton
-                                                key={name}
-                                                $iconSize={24}
-                                                $shouldShine={true}
-                                                onClick={() => handleCopy(name)}
-                                            >
-                                                <Icon size={24} />
+                                            <SMetallicButton key={name} {...args} onClick={() => handleCopy(name)}>
+                                                <Icon size={args.$iconSize ?? 24} />
                                             </SMetallicButton>
                                         ))}
                                     </SIconsWrapper>
@@ -264,13 +257,8 @@ export const ReactIconsSearch: Story = {
                     ) : (
                         <SIconsWrapper>
                             {seriesIcons.map(({ name, component: Icon }) => (
-                                <SMetallicButton
-                                    key={name}
-                                    $iconSize={24}
-                                    $shouldShine={true}
-                                    onClick={() => handleCopy(name)}
-                                >
-                                    <Icon size={24} />
+                                <SMetallicButton key={name} {...args} onClick={() => handleCopy(name)}>
+                                    <Icon size={args.$iconSize ?? 24} />
                                 </SMetallicButton>
                             ))}
                         </SIconsWrapper>
@@ -278,5 +266,8 @@ export const ReactIconsSearch: Story = {
                 </SIconGridContainer>
             </SIconSearchContainer>
         );
+    },
+    args: {
+        ...Default.args,
     },
 };
