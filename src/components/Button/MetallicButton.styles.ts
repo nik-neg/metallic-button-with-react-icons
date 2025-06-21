@@ -4,6 +4,16 @@ import { IconType } from 'react-icons';
 import { MIN_WIDTH, MIN_HEIGHT } from './constants';
 import { MetallicProps } from './types';
 
+export const SDefaultStoryContainer = styled.div`
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    height: '100vh',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    padding: '2rem',
+`;
+
 interface SMetallicButtonProps extends MetallicProps {
     width?: number;
     height?: number;

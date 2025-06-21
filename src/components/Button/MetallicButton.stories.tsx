@@ -15,6 +15,7 @@ import {
     SIconsWrapper,
     SSeriesGroupContainer,
     SCopiedMessage,
+    SDefaultStoryContainer,
 } from './index';
 
 import * as FontAwesomeIcons from 'react-icons/fa';
@@ -102,21 +103,11 @@ type Story = StoryObj<typeof SMetallicButton>;
 
 export const Default: Story = {
     render: ({ children, ...args }) => (
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '1rem',
-                height: '100vh',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                padding: '2rem',
-            }}
-        >
+        <SDefaultStoryContainer>
             <SMetallicButton {...args}>
                 <CircumIcons.CiFaceSmile /> {children}
             </SMetallicButton>
-        </div>
+        </SDefaultStoryContainer>
     ),
     args: {
         $shouldShine: true,
