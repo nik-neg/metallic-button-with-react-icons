@@ -102,9 +102,21 @@ type Story = StoryObj<typeof SMetallicButton>;
 
 export const Default: Story = {
     render: ({ children, ...args }) => (
-        <SMetallicButton {...args}>
-            <CircumIcons.CiFaceSmile /> {children}
-        </SMetallicButton>
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                height: '100vh',
+                justifyContent: 'flex-start',
+                alignItems: 'flex-start',
+                padding: '2rem',
+            }}
+        >
+            <SMetallicButton {...args}>
+                <CircumIcons.CiFaceSmile /> {children}
+            </SMetallicButton>
+        </div>
     ),
     args: {
         $shouldShine: true,

@@ -31,12 +31,13 @@ const GREY_COLOR_WITH_OPACITY = 'rgba(111, 111, 111, 0.9402135854341737)';
 
 interface MetallicBaseProps {
     $isVertical?: boolean;
+    $shineColor?: string;
 }
 
-export const getMetallicBase = ({ $isVertical }: MetallicBaseProps) => css`
+export const getMetallicBase = ({ $isVertical, $shineColor }: MetallicBaseProps) => css`
     background: ${$isVertical
         ? `linear-gradient(180deg, rgba(240, 240, 240, 1) 0%, rgba(111, 111, 111, 1) 35%, ${GREY_COLOR_WITH_OPACITY} 52%, ${GREY_COLOR_WITH_OPACITY} 94%)`
-        : `linear-gradient(90deg, rgba(240, 240, 240, 1) 0%, rgba(111, 111, 111, 1) 35%, ${GREY_COLOR_WITH_OPACITY} 52%, ${GREY_COLOR_WITH_OPACITY} 94%)`};
+        : `linear-gradient(90deg, ${$shineColor} 0%, ${$shineColor} 35%, ${$shineColor} 52%, ${$shineColor} 94%)`};
 
     border: 3px solid rgba(111, 111, 111, 1);
     border-color: ${GREY_COLOR_WITH_OPACITY} rgba(35, 35, 35, 1) rgba(35, 35, 35, 1) ${GREY_COLOR_WITH_OPACITY};
@@ -64,6 +65,13 @@ export const shineEffect = ({
     const dynamicShineDuration = $shineDuration ?? (isVertical ? BASE_DURATION_SHINE_VERTICAL : BASE_DURATION_SHINE);
 
     return css`
+        background: linear-gradient(
+            ${gradientDirection},
+            rgba(255, 255, 255, 0) 0%,
+            ${$shineColor} 50%,
+            rgba(128, 186, 232, 0) 99%,
+            rgba(125, 185, 232, 0) 94%
+        );
         &:hover {
             &:after {
                 content: '';
@@ -94,6 +102,6 @@ export const getMetallicStyles = ({
     $shineDuration,
     $shineDirection,
 }: MetallicProps = {}) => css`
-    ${getMetallicBase({ $isVertical: $shineDirection === 'vertical' })}
+    ${getMetallicBase({ $isVertical: $shineDirection === 'vertical', $shineColor })}
     ${$shouldShine ? shineEffect({ width, height, $shineColor, $shineDuration, $shineDirection }) : ''}
 `;
