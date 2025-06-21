@@ -115,7 +115,7 @@ export const Default: Story = {
         height: MIN_HEIGHT,
         $shineDuration: 2,
         $iconSize: 24,
-        $shineColor: 'rgba(255, 255, 255, 0.5)',
+        $shineColor: 'rgba(255, 255, 255, 0.8)',
         $iconColor: 'black',
         $shineDirection: 'horizontal',
     },
