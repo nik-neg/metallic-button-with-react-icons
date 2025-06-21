@@ -5,13 +5,13 @@ import { MIN_WIDTH, MIN_HEIGHT } from './constants';
 import { MetallicProps } from './types';
 
 export const SDefaultStoryContainer = styled.div`
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    height: '100vh',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    padding: '2rem',
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2rem;
 `;
 
 interface SMetallicButtonProps extends MetallicProps {
